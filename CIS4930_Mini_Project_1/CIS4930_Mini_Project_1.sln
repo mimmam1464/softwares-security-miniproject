@@ -1,6 +1,7 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CIS4930_Mini_Project_1", "CIS4930_Mini_Project_1\CIS4930_Mini_Project_1.csproj", "{1E98E462-10AC-4C96-99BF-42482E1131E3}"
 EndProject
 Global
@@ -13,5 +14,11 @@ Global
 		{1E98E462-10AC-4C96-99BF-42482E1131E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E98E462-10AC-4C96-99BF-42482E1131E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E98E462-10AC-4C96-99BF-42482E1131E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0D77F33F-FD07-4288-B515-AD2E9670A803}
 	EndGlobalSection
 EndGlobal
