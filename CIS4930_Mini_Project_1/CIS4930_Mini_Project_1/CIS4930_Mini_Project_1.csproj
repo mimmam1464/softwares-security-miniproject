@@ -39,6 +39,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -74,15 +76,26 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
-    <Folder Include="Models\" />
     <Folder Include="Scripts\" />
+    <Folder Include="Views\AccountH\" />
+    <Folder Include="Views\AccountRegular\" />
+    <Folder Include="Views\AccountR\" />
+    <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AccountHController.cs" />
+    <Compile Include="Controllers\AccountRController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Models\cis4930db.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cis4930db.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoginModels.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -99,6 +112,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Jose.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\cis4930db.xsc">
+      <DependentUpon>cis4930db.xsd</DependentUpon>
+    </Content>
+    <None Include="Models\cis4930db.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>cis4930db.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Models\cis4930db.xss">
+      <DependentUpon>cis4930db.xsd</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
