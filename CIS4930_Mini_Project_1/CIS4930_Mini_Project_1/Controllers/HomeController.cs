@@ -19,5 +19,12 @@ namespace CIS4930_Mini_Project_1.Controllers
 
             return View();
         }
+
+        public ActionResult forgotPass()
+        {
+            return View();
+        }
+
+        
     }
 }

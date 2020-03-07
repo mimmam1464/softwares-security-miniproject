@@ -1,1 +1,57 @@
-﻿<h2>Welcome to ASP.NET MVC @ViewData["Version"] on @ViewData["Runtime"]!</h2>
+﻿@model CIS4930_Mini_Project_1.Models.ComparePass
+
+<div id="basic">
+    <div id="basic2" ">
+        <h1 style="text-align: center;"> Register</h1>
+        <form id="info">
+            <div>
+                <input type="text" name="username" id="username" placeholder="username..." />
+            </div>
+
+            <div>
+                <input type="text" name="Email" id="Email" placeholder="Email..." />
+            </div>
+
+            <div>
+                <input type="password" name="password" id="password" placeholder="password..." />
+            </div>
+
+            <div>
+                <input type="password" name="password" id="password" placeholder="confirm passowrd..." />
+            </div>
+
+            <button type="submit" id="search_bar_button">
+                Register
+            </button>
+            <a href="https://www.google.com">help?</a>
+        </form>
+
+      
+    </div>
+</div>
+
+<div id="basic">
+    <div id="basic2" ">
+        <h1 style="text-align: center;"> Log In</h1>
+        <div id="opt"> </div>
+        <form id="info">
+            <div>
+                <input type="text" name="username" id="username" placeholder="username..." value="" />
+            </div>
+
+            <div>
+                <input type="password" name="password"  id="password" placeholder="password..." value=""/>
+            </div>
+
+            <button type="submit" id="search_bar_button">
+                Log In
+            </button>
+
+            <div>
+            <a href="/forgotpass">Forgot password?</a>
+            </div>
+        </form>
+        
+    </div>
+
+</div>
