@@ -96,6 +96,9 @@
       <DependentUpon>cis4930db.xsd</DependentUpon>
     </Compile>
     <Compile Include="Models\LoginModels.cs" />
+    <Compile Include="Controllers\dashboard.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\ComparePass.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -106,6 +109,10 @@
     <Content Include="Web.config" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
+    <Content Include="Style\style.css" />
+    <Content Include="Views\Shared\forgotpassword.cshtml" />
+    <Content Include="Views\Home\forgotpass.cshtml" />
+    <Content Include="Image\logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\AnotherPage.cshtml" />
@@ -130,7 +137,7 @@
   <ProjectExtensions>
     <MonoDevelop>
       <Properties>
-        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
+        <XspParameters Port="8082" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
       </Properties>
     </MonoDevelop>
     <VisualStudio>
@@ -140,7 +147,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:61671/</IISUrl>
+          <IISUrl>http://localhost:49389/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
