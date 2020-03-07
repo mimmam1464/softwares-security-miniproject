@@ -8,16 +8,11 @@ namespace CIS4930_Mini_Project_1.Models
     public class LoginModel
     {
         public string username { get; set; }
-        public string name { get; set; }
         public string password { get; set; }
+        public string name { get; set; }
+        public string confirmPassword { get; set; }
+        public bool isRegistration { get; set; }
     }
 
-    public class RegisterModel
-    {
-        public string username { get; set; }
-        public string name { get; set; }
-        public string password { get; set; }
-        public string confirmPassword { get; set; }
-    }
 
 }

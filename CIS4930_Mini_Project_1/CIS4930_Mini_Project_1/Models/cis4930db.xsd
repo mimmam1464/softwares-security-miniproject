@@ -100,7 +100,7 @@ FROM   USERS</CommandText>
   <xs:element name="cis4930db" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="cis4930db" msprop:Generator_UserDSName="cis4930db">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="SHOWTODOS" msprop:Generator_TableClassName="SHOWTODOSDataTable" msprop:Generator_TableVarName="tableSHOWTODOS" msprop:Generator_TablePropName="SHOWTODOS" msprop:Generator_RowDeletingName="SHOWTODOSRowDeleting" msprop:Generator_RowChangingName="SHOWTODOSRowChanging" msprop:Generator_RowEvHandlerName="SHOWTODOSRowChangeEventHandler" msprop:Generator_RowDeletedName="SHOWTODOSRowDeleted" msprop:Generator_UserTableName="SHOWTODOS" msprop:Generator_RowChangedName="SHOWTODOSRowChanged" msprop:Generator_RowEvArgName="SHOWTODOSRowChangeEvent" msprop:Generator_RowClassName="SHOWTODOSRow">
+        <xs:element name="SHOWTODOS" msprop:Generator_TableClassName="SHOWTODOSDataTable" msprop:Generator_TableVarName="tableSHOWTODOS" msprop:Generator_RowChangedName="SHOWTODOSRowChanged" msprop:Generator_TablePropName="SHOWTODOS" msprop:Generator_RowDeletingName="SHOWTODOSRowDeleting" msprop:Generator_RowChangingName="SHOWTODOSRowChanging" msprop:Generator_RowEvHandlerName="SHOWTODOSRowChangeEventHandler" msprop:Generator_RowDeletedName="SHOWTODOSRowDeleted" msprop:Generator_RowClassName="SHOWTODOSRow" msprop:Generator_UserTableName="SHOWTODOS" msprop:Generator_RowEvArgName="SHOWTODOSRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="todo" msprop:Generator_ColumnVarNameInTable="columntodo" msprop:Generator_ColumnPropNameInRow="todo" msprop:Generator_ColumnPropNameInTable="todoColumn" msprop:Generator_UserColumnName="todo" minOccurs="0">
@@ -135,7 +135,7 @@ FROM   USERS</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TODOLIST" msprop:Generator_TableClassName="TODOLISTDataTable" msprop:Generator_TableVarName="tableTODOLIST" msprop:Generator_TablePropName="TODOLIST" msprop:Generator_RowDeletingName="TODOLISTRowDeleting" msprop:Generator_RowChangingName="TODOLISTRowChanging" msprop:Generator_RowEvHandlerName="TODOLISTRowChangeEventHandler" msprop:Generator_RowDeletedName="TODOLISTRowDeleted" msprop:Generator_UserTableName="TODOLIST" msprop:Generator_RowChangedName="TODOLISTRowChanged" msprop:Generator_RowEvArgName="TODOLISTRowChangeEvent" msprop:Generator_RowClassName="TODOLISTRow">
+        <xs:element name="TODOLIST" msprop:Generator_TableClassName="TODOLISTDataTable" msprop:Generator_TableVarName="tableTODOLIST" msprop:Generator_RowChangedName="TODOLISTRowChanged" msprop:Generator_TablePropName="TODOLIST" msprop:Generator_RowDeletingName="TODOLISTRowDeleting" msprop:Generator_RowChangingName="TODOLISTRowChanging" msprop:Generator_RowEvHandlerName="TODOLISTRowChangeEventHandler" msprop:Generator_RowDeletedName="TODOLISTRowDeleted" msprop:Generator_RowClassName="TODOLISTRow" msprop:Generator_UserTableName="TODOLIST" msprop:Generator_RowEvArgName="TODOLISTRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="username_id" msprop:Generator_ColumnVarNameInTable="columnusername_id" msprop:Generator_ColumnPropNameInRow="username_id" msprop:Generator_ColumnPropNameInTable="username_idColumn" msprop:Generator_UserColumnName="username_id">
@@ -156,7 +156,7 @@ FROM   USERS</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="USERS" msprop:Generator_TableClassName="USERSDataTable" msprop:Generator_TableVarName="tableUSERS" msprop:Generator_TablePropName="USERS" msprop:Generator_RowDeletingName="USERSRowDeleting" msprop:Generator_RowChangingName="USERSRowChanging" msprop:Generator_RowEvHandlerName="USERSRowChangeEventHandler" msprop:Generator_RowDeletedName="USERSRowDeleted" msprop:Generator_UserTableName="USERS" msprop:Generator_RowChangedName="USERSRowChanged" msprop:Generator_RowEvArgName="USERSRowChangeEvent" msprop:Generator_RowClassName="USERSRow">
+        <xs:element name="USERS" msprop:Generator_TableClassName="USERSDataTable" msprop:Generator_TableVarName="tableUSERS" msprop:Generator_RowChangedName="USERSRowChanged" msprop:Generator_TablePropName="USERS" msprop:Generator_RowDeletingName="USERSRowDeleting" msprop:Generator_RowChangingName="USERSRowChanging" msprop:Generator_RowEvHandlerName="USERSRowChangeEventHandler" msprop:Generator_RowDeletedName="USERSRowDeleted" msprop:Generator_RowClassName="USERSRow" msprop:Generator_UserTableName="USERS" msprop:Generator_RowEvArgName="USERSRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="index" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnindex" msprop:Generator_ColumnPropNameInRow="index" msprop:Generator_ColumnPropNameInTable="indexColumn" msprop:Generator_UserColumnName="index" type="xs:int" />

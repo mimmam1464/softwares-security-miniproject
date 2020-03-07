@@ -39,6 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web" />
@@ -79,7 +80,6 @@
     <Folder Include="Scripts\" />
     <Folder Include="Views\AccountH\" />
     <Folder Include="Views\AccountRegular\" />
-    <Folder Include="Views\AccountR\" />
     <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
@@ -97,12 +97,9 @@
     </Compile>
     <Compile Include="Models\LoginModels.cs" />
     <Compile Include="Controllers\dashboard.cs" />
-    <Compile Include="Models\Person.cs" />
-    <Compile Include="Models\ComparePass.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -132,6 +129,10 @@
     <Content Include="Models\cis4930db.xss">
       <DependentUpon>cis4930db.xsd</DependentUpon>
     </Content>
+    <Content Include="Views\AccountR\Credential.cshtml" />
+    <Content Include="Views\AccountR\testview.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\AccountR\Login.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
