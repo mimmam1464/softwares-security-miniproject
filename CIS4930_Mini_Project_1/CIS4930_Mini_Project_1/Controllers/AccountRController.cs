@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -30,20 +31,29 @@ namespace CIS4930_Mini_Project_1.Controllers
             if (ModelState.IsValid)
             {
                 //Handle the login here
-                //temporary:
-                var userTable = new cis4930db.USERSDataTable();
-                usersAgent.Fill(userTable);
-                for (int i = 0; i < userTable.Count; i++)
-                {
-                    if (userTable[i].username == model.username)
-                    {
-                        if (userTable[i].hashedkey == model.password)
-                        {
-                            //login success
+                //Entity Login
+                //var sqlquery = "jose' OR 1=1) --";
+                var db = new dbEntities();
+                var data = db.Database.SqlQuery<USER>("SELECT [index], id, username, name, hashedkey FROM dbo.USERS WHERE (username = '" + model.username + "')").ToList<USER>();
+                if (data.Count>0)
+                    for(int i=0; i<data.Count; i++)
+                        if(data[i].hashedkey == model.password)
                             return RedirectToAction("Index", "Home", model);
-                        }
-                    }
-                }
+
+                // //temporary:
+                // var userTable = new cis4930db.USERSDataTable();
+                // usersAgent.Fill(userTable);
+                // for (int i = 0; i < userTable.Count; i++)
+                // {
+                //     if (userTable[i].username == model.username)
+                //     {
+                //         if (userTable[i].hashedkey == model.password)
+                //         {
+                //             //login success
+                //             
+                //         }
+                //     }
+                // }
                 ModelState.AddModelError("username","sorry account details don't match!");
             }
 
@@ -79,6 +89,15 @@ namespace CIS4930_Mini_Project_1.Controllers
                 usersAgent.Insert("tbd", model.username, model.name, model.password);
                 return RedirectToAction("Login", "AccountR", model);
             }
+            return View();
+        }
+
+        public ActionResult Test()
+        {
+            var sqlquery = "jose' OR 1=1) --";
+            var db = new dbEntities();
+            var data = db.Database.SqlQuery<USER>("SELECT [index], id, username, name, hashedkey FROM dbo.USERS WHERE (username = '"+sqlquery+"')").ToList<USER>();
+            ViewBag.Data = data.Count;
             return View();
         }
     }
