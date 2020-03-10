@@ -26,13 +26,13 @@ namespace CIS4930_Mini_Project_1.Models {
         
         private SHOWTODOSDataTable tableSHOWTODOS;
         
-        private TODOLISTDataTable tableTODOLIST;
+        private SHOWTODOSSAFEDataTable tableSHOWTODOSSAFE;
         
         private USERSDataTable tableUSERS;
         
         private USERSSAFEDataTable tableUSERSSAFE;
         
-        private SHOWTODOSSAFEDataTable tableSHOWTODOSSAFE;
+        private TODOLISTDataTable tableTODOLIST;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -65,8 +65,8 @@ namespace CIS4930_Mini_Project_1.Models {
                 if ((ds.Tables["SHOWTODOS"] != null)) {
                     base.Tables.Add(new SHOWTODOSDataTable(ds.Tables["SHOWTODOS"]));
                 }
-                if ((ds.Tables["TODOLIST"] != null)) {
-                    base.Tables.Add(new TODOLISTDataTable(ds.Tables["TODOLIST"]));
+                if ((ds.Tables["SHOWTODOSSAFE"] != null)) {
+                    base.Tables.Add(new SHOWTODOSSAFEDataTable(ds.Tables["SHOWTODOSSAFE"]));
                 }
                 if ((ds.Tables["USERS"] != null)) {
                     base.Tables.Add(new USERSDataTable(ds.Tables["USERS"]));
@@ -74,8 +74,8 @@ namespace CIS4930_Mini_Project_1.Models {
                 if ((ds.Tables["USERSSAFE"] != null)) {
                     base.Tables.Add(new USERSSAFEDataTable(ds.Tables["USERSSAFE"]));
                 }
-                if ((ds.Tables["SHOWTODOSSAFE"] != null)) {
-                    base.Tables.Add(new SHOWTODOSSAFEDataTable(ds.Tables["SHOWTODOSSAFE"]));
+                if ((ds.Tables["TODOLIST"] != null)) {
+                    base.Tables.Add(new TODOLISTDataTable(ds.Tables["TODOLIST"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -109,9 +109,9 @@ namespace CIS4930_Mini_Project_1.Models {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public TODOLISTDataTable TODOLIST {
+        public SHOWTODOSSAFEDataTable SHOWTODOSSAFE {
             get {
-                return this.tableTODOLIST;
+                return this.tableSHOWTODOSSAFE;
             }
         }
         
@@ -139,9 +139,9 @@ namespace CIS4930_Mini_Project_1.Models {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public SHOWTODOSSAFEDataTable SHOWTODOSSAFE {
+        public TODOLISTDataTable TODOLIST {
             get {
-                return this.tableSHOWTODOSSAFE;
+                return this.tableTODOLIST;
             }
         }
         
@@ -215,8 +215,8 @@ namespace CIS4930_Mini_Project_1.Models {
                 if ((ds.Tables["SHOWTODOS"] != null)) {
                     base.Tables.Add(new SHOWTODOSDataTable(ds.Tables["SHOWTODOS"]));
                 }
-                if ((ds.Tables["TODOLIST"] != null)) {
-                    base.Tables.Add(new TODOLISTDataTable(ds.Tables["TODOLIST"]));
+                if ((ds.Tables["SHOWTODOSSAFE"] != null)) {
+                    base.Tables.Add(new SHOWTODOSSAFEDataTable(ds.Tables["SHOWTODOSSAFE"]));
                 }
                 if ((ds.Tables["USERS"] != null)) {
                     base.Tables.Add(new USERSDataTable(ds.Tables["USERS"]));
@@ -224,8 +224,8 @@ namespace CIS4930_Mini_Project_1.Models {
                 if ((ds.Tables["USERSSAFE"] != null)) {
                     base.Tables.Add(new USERSSAFEDataTable(ds.Tables["USERSSAFE"]));
                 }
-                if ((ds.Tables["SHOWTODOSSAFE"] != null)) {
-                    base.Tables.Add(new SHOWTODOSSAFEDataTable(ds.Tables["SHOWTODOSSAFE"]));
+                if ((ds.Tables["TODOLIST"] != null)) {
+                    base.Tables.Add(new TODOLISTDataTable(ds.Tables["TODOLIST"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -266,10 +266,10 @@ namespace CIS4930_Mini_Project_1.Models {
                     this.tableSHOWTODOS.InitVars();
                 }
             }
-            this.tableTODOLIST = ((TODOLISTDataTable)(base.Tables["TODOLIST"]));
+            this.tableSHOWTODOSSAFE = ((SHOWTODOSSAFEDataTable)(base.Tables["SHOWTODOSSAFE"]));
             if ((initTable == true)) {
-                if ((this.tableTODOLIST != null)) {
-                    this.tableTODOLIST.InitVars();
+                if ((this.tableSHOWTODOSSAFE != null)) {
+                    this.tableSHOWTODOSSAFE.InitVars();
                 }
             }
             this.tableUSERS = ((USERSDataTable)(base.Tables["USERS"]));
@@ -284,10 +284,10 @@ namespace CIS4930_Mini_Project_1.Models {
                     this.tableUSERSSAFE.InitVars();
                 }
             }
-            this.tableSHOWTODOSSAFE = ((SHOWTODOSSAFEDataTable)(base.Tables["SHOWTODOSSAFE"]));
+            this.tableTODOLIST = ((TODOLISTDataTable)(base.Tables["TODOLIST"]));
             if ((initTable == true)) {
-                if ((this.tableSHOWTODOSSAFE != null)) {
-                    this.tableSHOWTODOSSAFE.InitVars();
+                if ((this.tableTODOLIST != null)) {
+                    this.tableTODOLIST.InitVars();
                 }
             }
         }
@@ -302,14 +302,14 @@ namespace CIS4930_Mini_Project_1.Models {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableSHOWTODOS = new SHOWTODOSDataTable();
             base.Tables.Add(this.tableSHOWTODOS);
-            this.tableTODOLIST = new TODOLISTDataTable();
-            base.Tables.Add(this.tableTODOLIST);
+            this.tableSHOWTODOSSAFE = new SHOWTODOSSAFEDataTable();
+            base.Tables.Add(this.tableSHOWTODOSSAFE);
             this.tableUSERS = new USERSDataTable();
             base.Tables.Add(this.tableUSERS);
             this.tableUSERSSAFE = new USERSSAFEDataTable();
             base.Tables.Add(this.tableUSERSSAFE);
-            this.tableSHOWTODOSSAFE = new SHOWTODOSSAFEDataTable();
-            base.Tables.Add(this.tableSHOWTODOSSAFE);
+            this.tableTODOLIST = new TODOLISTDataTable();
+            base.Tables.Add(this.tableTODOLIST);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -320,7 +320,7 @@ namespace CIS4930_Mini_Project_1.Models {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeTODOLIST() {
+        private bool ShouldSerializeSHOWTODOSSAFE() {
             return false;
         }
         
@@ -338,7 +338,7 @@ namespace CIS4930_Mini_Project_1.Models {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeSHOWTODOSSAFE() {
+        private bool ShouldSerializeTODOLIST() {
             return false;
         }
         
@@ -401,7 +401,7 @@ namespace CIS4930_Mini_Project_1.Models {
         public delegate void SHOWTODOSRowChangeEventHandler(object sender, SHOWTODOSRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void TODOLISTRowChangeEventHandler(object sender, TODOLISTRowChangeEvent e);
+        public delegate void SHOWTODOSSAFERowChangeEventHandler(object sender, SHOWTODOSSAFERowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void USERSRowChangeEventHandler(object sender, USERSRowChangeEvent e);
@@ -410,7 +410,7 @@ namespace CIS4930_Mini_Project_1.Models {
         public delegate void USERSSAFERowChangeEventHandler(object sender, USERSSAFERowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void SHOWTODOSSAFERowChangeEventHandler(object sender, SHOWTODOSSAFERowChangeEvent e);
+        public delegate void TODOLISTRowChangeEventHandler(object sender, TODOLISTRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -728,18 +728,22 @@ namespace CIS4930_Mini_Project_1.Models {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class TODOLISTDataTable : global::System.Data.TypedTableBase<TODOLISTRow> {
-            
-            private global::System.Data.DataColumn columnusername_id;
+        public partial class SHOWTODOSSAFEDataTable : global::System.Data.TypedTableBase<SHOWTODOSSAFERow> {
             
             private global::System.Data.DataColumn columntodo;
             
             private global::System.Data.DataColumn columncompleted;
             
+            private global::System.Data.DataColumn columnname;
+            
+            private global::System.Data.DataColumn columnusername_id;
+            
+            private global::System.Data.DataColumn columnExpr1;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TODOLISTDataTable() {
-                this.TableName = "TODOLIST";
+            public SHOWTODOSSAFEDataTable() {
+                this.TableName = "SHOWTODOSSAFE";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -747,7 +751,7 @@ namespace CIS4930_Mini_Project_1.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal TODOLISTDataTable(global::System.Data.DataTable table) {
+            internal SHOWTODOSSAFEDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -764,17 +768,9 @@ namespace CIS4930_Mini_Project_1.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected TODOLISTDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected SHOWTODOSSAFEDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn username_idColumn {
-                get {
-                    return this.columnusername_id;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -795,6 +791,30 @@ namespace CIS4930_Mini_Project_1.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn nameColumn {
+                get {
+                    return this.columnname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn username_idColumn {
+                get {
+                    return this.columnusername_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Expr1Column {
+                get {
+                    return this.columnExpr1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -804,47 +824,49 @@ namespace CIS4930_Mini_Project_1.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TODOLISTRow this[int index] {
+            public SHOWTODOSSAFERow this[int index] {
                 get {
-                    return ((TODOLISTRow)(this.Rows[index]));
+                    return ((SHOWTODOSSAFERow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event TODOLISTRowChangeEventHandler TODOLISTRowChanging;
+            public event SHOWTODOSSAFERowChangeEventHandler SHOWTODOSSAFERowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event TODOLISTRowChangeEventHandler TODOLISTRowChanged;
+            public event SHOWTODOSSAFERowChangeEventHandler SHOWTODOSSAFERowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event TODOLISTRowChangeEventHandler TODOLISTRowDeleting;
+            public event SHOWTODOSSAFERowChangeEventHandler SHOWTODOSSAFERowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event TODOLISTRowChangeEventHandler TODOLISTRowDeleted;
+            public event SHOWTODOSSAFERowChangeEventHandler SHOWTODOSSAFERowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddTODOLISTRow(TODOLISTRow row) {
+            public void AddSHOWTODOSSAFERow(SHOWTODOSSAFERow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TODOLISTRow AddTODOLISTRow(string username_id, string todo, bool completed) {
-                TODOLISTRow rowTODOLISTRow = ((TODOLISTRow)(this.NewRow()));
+            public SHOWTODOSSAFERow AddSHOWTODOSSAFERow(string todo, bool completed, string name, string username_id, string Expr1) {
+                SHOWTODOSSAFERow rowSHOWTODOSSAFERow = ((SHOWTODOSSAFERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        username_id,
                         todo,
-                        completed};
-                rowTODOLISTRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowTODOLISTRow);
-                return rowTODOLISTRow;
+                        completed,
+                        name,
+                        username_id,
+                        Expr1};
+                rowSHOWTODOSSAFERow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSHOWTODOSSAFERow);
+                return rowSHOWTODOSSAFERow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                TODOLISTDataTable cln = ((TODOLISTDataTable)(base.Clone()));
+                SHOWTODOSSAFEDataTable cln = ((SHOWTODOSSAFEDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -852,56 +874,66 @@ namespace CIS4930_Mini_Project_1.Models {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new TODOLISTDataTable();
+                return new SHOWTODOSSAFEDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnusername_id = base.Columns["username_id"];
                 this.columntodo = base.Columns["todo"];
                 this.columncompleted = base.Columns["completed"];
+                this.columnname = base.Columns["name"];
+                this.columnusername_id = base.Columns["username_id"];
+                this.columnExpr1 = base.Columns["Expr1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnusername_id = new global::System.Data.DataColumn("username_id", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnusername_id);
                 this.columntodo = new global::System.Data.DataColumn("todo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntodo);
                 this.columncompleted = new global::System.Data.DataColumn("completed", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncompleted);
-                this.columnusername_id.AllowDBNull = false;
-                this.columnusername_id.MaxLength = 2147483647;
+                this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnname);
+                this.columnusername_id = new global::System.Data.DataColumn("username_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnusername_id);
+                this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExpr1);
                 this.columntodo.MaxLength = 2147483647;
                 this.columncompleted.AllowDBNull = false;
+                this.columnname.AllowDBNull = false;
+                this.columnname.MaxLength = 2147483647;
+                this.columnusername_id.AllowDBNull = false;
+                this.columnusername_id.MaxLength = 2147483647;
+                this.columnExpr1.AllowDBNull = false;
+                this.columnExpr1.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TODOLISTRow NewTODOLISTRow() {
-                return ((TODOLISTRow)(this.NewRow()));
+            public SHOWTODOSSAFERow NewSHOWTODOSSAFERow() {
+                return ((SHOWTODOSSAFERow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new TODOLISTRow(builder);
+                return new SHOWTODOSSAFERow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(TODOLISTRow);
+                return typeof(SHOWTODOSSAFERow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.TODOLISTRowChanged != null)) {
-                    this.TODOLISTRowChanged(this, new TODOLISTRowChangeEvent(((TODOLISTRow)(e.Row)), e.Action));
+                if ((this.SHOWTODOSSAFERowChanged != null)) {
+                    this.SHOWTODOSSAFERowChanged(this, new SHOWTODOSSAFERowChangeEvent(((SHOWTODOSSAFERow)(e.Row)), e.Action));
                 }
             }
             
@@ -909,8 +941,8 @@ namespace CIS4930_Mini_Project_1.Models {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.TODOLISTRowChanging != null)) {
-                    this.TODOLISTRowChanging(this, new TODOLISTRowChangeEvent(((TODOLISTRow)(e.Row)), e.Action));
+                if ((this.SHOWTODOSSAFERowChanging != null)) {
+                    this.SHOWTODOSSAFERowChanging(this, new SHOWTODOSSAFERowChangeEvent(((SHOWTODOSSAFERow)(e.Row)), e.Action));
                 }
             }
             
@@ -918,8 +950,8 @@ namespace CIS4930_Mini_Project_1.Models {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.TODOLISTRowDeleted != null)) {
-                    this.TODOLISTRowDeleted(this, new TODOLISTRowChangeEvent(((TODOLISTRow)(e.Row)), e.Action));
+                if ((this.SHOWTODOSSAFERowDeleted != null)) {
+                    this.SHOWTODOSSAFERowDeleted(this, new SHOWTODOSSAFERowChangeEvent(((SHOWTODOSSAFERow)(e.Row)), e.Action));
                 }
             }
             
@@ -927,14 +959,14 @@ namespace CIS4930_Mini_Project_1.Models {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.TODOLISTRowDeleting != null)) {
-                    this.TODOLISTRowDeleting(this, new TODOLISTRowChangeEvent(((TODOLISTRow)(e.Row)), e.Action));
+                if ((this.SHOWTODOSSAFERowDeleting != null)) {
+                    this.SHOWTODOSSAFERowDeleting(this, new SHOWTODOSSAFERowChangeEvent(((SHOWTODOSSAFERow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveTODOLISTRow(TODOLISTRow row) {
+            public void RemoveSHOWTODOSSAFERow(SHOWTODOSSAFERow row) {
                 this.Rows.Remove(row);
             }
             
@@ -961,7 +993,7 @@ namespace CIS4930_Mini_Project_1.Models {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "TODOLISTDataTable";
+                attribute2.FixedValue = "SHOWTODOSSAFEDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1637,22 +1669,20 @@ namespace CIS4930_Mini_Project_1.Models {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class SHOWTODOSSAFEDataTable : global::System.Data.TypedTableBase<SHOWTODOSSAFERow> {
+        public partial class TODOLISTDataTable : global::System.Data.TypedTableBase<TODOLISTRow> {
+            
+            private global::System.Data.DataColumn columnindex;
+            
+            private global::System.Data.DataColumn columnusername_id;
             
             private global::System.Data.DataColumn columntodo;
             
             private global::System.Data.DataColumn columncompleted;
             
-            private global::System.Data.DataColumn columnname;
-            
-            private global::System.Data.DataColumn columnusername_id;
-            
-            private global::System.Data.DataColumn columnExpr1;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SHOWTODOSSAFEDataTable() {
-                this.TableName = "SHOWTODOSSAFE";
+            public TODOLISTDataTable() {
+                this.TableName = "TODOLIST";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1660,7 +1690,7 @@ namespace CIS4930_Mini_Project_1.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal SHOWTODOSSAFEDataTable(global::System.Data.DataTable table) {
+            internal TODOLISTDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1677,9 +1707,25 @@ namespace CIS4930_Mini_Project_1.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected SHOWTODOSSAFEDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected TODOLISTDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn indexColumn {
+                get {
+                    return this.columnindex;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn username_idColumn {
+                get {
+                    return this.columnusername_id;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1700,30 +1746,6 @@ namespace CIS4930_Mini_Project_1.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn nameColumn {
-                get {
-                    return this.columnname;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn username_idColumn {
-                get {
-                    return this.columnusername_id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Expr1Column {
-                get {
-                    return this.columnExpr1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1733,49 +1755,48 @@ namespace CIS4930_Mini_Project_1.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SHOWTODOSSAFERow this[int index] {
+            public TODOLISTRow this[int index] {
                 get {
-                    return ((SHOWTODOSSAFERow)(this.Rows[index]));
+                    return ((TODOLISTRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SHOWTODOSSAFERowChangeEventHandler SHOWTODOSSAFERowChanging;
+            public event TODOLISTRowChangeEventHandler TODOLISTRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SHOWTODOSSAFERowChangeEventHandler SHOWTODOSSAFERowChanged;
+            public event TODOLISTRowChangeEventHandler TODOLISTRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SHOWTODOSSAFERowChangeEventHandler SHOWTODOSSAFERowDeleting;
+            public event TODOLISTRowChangeEventHandler TODOLISTRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SHOWTODOSSAFERowChangeEventHandler SHOWTODOSSAFERowDeleted;
+            public event TODOLISTRowChangeEventHandler TODOLISTRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddSHOWTODOSSAFERow(SHOWTODOSSAFERow row) {
+            public void AddTODOLISTRow(TODOLISTRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SHOWTODOSSAFERow AddSHOWTODOSSAFERow(string todo, bool completed, string name, string username_id, string Expr1) {
-                SHOWTODOSSAFERow rowSHOWTODOSSAFERow = ((SHOWTODOSSAFERow)(this.NewRow()));
+            public TODOLISTRow AddTODOLISTRow(string username_id, string todo, bool completed) {
+                TODOLISTRow rowTODOLISTRow = ((TODOLISTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        todo,
-                        completed,
-                        name,
+                        null,
                         username_id,
-                        Expr1};
-                rowSHOWTODOSSAFERow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSHOWTODOSSAFERow);
-                return rowSHOWTODOSSAFERow;
+                        todo,
+                        completed};
+                rowTODOLISTRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTODOLISTRow);
+                return rowTODOLISTRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                SHOWTODOSSAFEDataTable cln = ((SHOWTODOSSAFEDataTable)(base.Clone()));
+                TODOLISTDataTable cln = ((TODOLISTDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1783,66 +1804,64 @@ namespace CIS4930_Mini_Project_1.Models {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new SHOWTODOSSAFEDataTable();
+                return new TODOLISTDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
+                this.columnindex = base.Columns["index"];
+                this.columnusername_id = base.Columns["username_id"];
                 this.columntodo = base.Columns["todo"];
                 this.columncompleted = base.Columns["completed"];
-                this.columnname = base.Columns["name"];
-                this.columnusername_id = base.Columns["username_id"];
-                this.columnExpr1 = base.Columns["Expr1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
+                this.columnindex = new global::System.Data.DataColumn("index", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnindex);
+                this.columnusername_id = new global::System.Data.DataColumn("username_id", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnusername_id);
                 this.columntodo = new global::System.Data.DataColumn("todo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntodo);
                 this.columncompleted = new global::System.Data.DataColumn("completed", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncompleted);
-                this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnname);
-                this.columnusername_id = new global::System.Data.DataColumn("username_id", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnusername_id);
-                this.columnExpr1 = new global::System.Data.DataColumn("Expr1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExpr1);
-                this.columntodo.MaxLength = 2147483647;
-                this.columncompleted.AllowDBNull = false;
-                this.columnname.AllowDBNull = false;
-                this.columnname.MaxLength = 2147483647;
+                this.columnindex.AutoIncrement = true;
+                this.columnindex.AutoIncrementSeed = -1;
+                this.columnindex.AutoIncrementStep = -1;
+                this.columnindex.AllowDBNull = false;
+                this.columnindex.ReadOnly = true;
                 this.columnusername_id.AllowDBNull = false;
                 this.columnusername_id.MaxLength = 2147483647;
-                this.columnExpr1.AllowDBNull = false;
-                this.columnExpr1.MaxLength = 2147483647;
+                this.columntodo.MaxLength = 2147483647;
+                this.columncompleted.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SHOWTODOSSAFERow NewSHOWTODOSSAFERow() {
-                return ((SHOWTODOSSAFERow)(this.NewRow()));
+            public TODOLISTRow NewTODOLISTRow() {
+                return ((TODOLISTRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new SHOWTODOSSAFERow(builder);
+                return new TODOLISTRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(SHOWTODOSSAFERow);
+                return typeof(TODOLISTRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.SHOWTODOSSAFERowChanged != null)) {
-                    this.SHOWTODOSSAFERowChanged(this, new SHOWTODOSSAFERowChangeEvent(((SHOWTODOSSAFERow)(e.Row)), e.Action));
+                if ((this.TODOLISTRowChanged != null)) {
+                    this.TODOLISTRowChanged(this, new TODOLISTRowChangeEvent(((TODOLISTRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1850,8 +1869,8 @@ namespace CIS4930_Mini_Project_1.Models {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.SHOWTODOSSAFERowChanging != null)) {
-                    this.SHOWTODOSSAFERowChanging(this, new SHOWTODOSSAFERowChangeEvent(((SHOWTODOSSAFERow)(e.Row)), e.Action));
+                if ((this.TODOLISTRowChanging != null)) {
+                    this.TODOLISTRowChanging(this, new TODOLISTRowChangeEvent(((TODOLISTRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1859,8 +1878,8 @@ namespace CIS4930_Mini_Project_1.Models {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.SHOWTODOSSAFERowDeleted != null)) {
-                    this.SHOWTODOSSAFERowDeleted(this, new SHOWTODOSSAFERowChangeEvent(((SHOWTODOSSAFERow)(e.Row)), e.Action));
+                if ((this.TODOLISTRowDeleted != null)) {
+                    this.TODOLISTRowDeleted(this, new TODOLISTRowChangeEvent(((TODOLISTRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1868,14 +1887,14 @@ namespace CIS4930_Mini_Project_1.Models {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.SHOWTODOSSAFERowDeleting != null)) {
-                    this.SHOWTODOSSAFERowDeleting(this, new SHOWTODOSSAFERowChangeEvent(((SHOWTODOSSAFERow)(e.Row)), e.Action));
+                if ((this.TODOLISTRowDeleting != null)) {
+                    this.TODOLISTRowDeleting(this, new TODOLISTRowChangeEvent(((TODOLISTRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveSHOWTODOSSAFERow(SHOWTODOSSAFERow row) {
+            public void RemoveTODOLISTRow(TODOLISTRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1902,7 +1921,7 @@ namespace CIS4930_Mini_Project_1.Models {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "SHOWTODOSSAFEDataTable";
+                attribute2.FixedValue = "TODOLISTDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2033,26 +2052,15 @@ namespace CIS4930_Mini_Project_1.Models {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class TODOLISTRow : global::System.Data.DataRow {
+        public partial class SHOWTODOSSAFERow : global::System.Data.DataRow {
             
-            private TODOLISTDataTable tableTODOLIST;
+            private SHOWTODOSSAFEDataTable tableSHOWTODOSSAFE;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal TODOLISTRow(global::System.Data.DataRowBuilder rb) : 
+            internal SHOWTODOSSAFERow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableTODOLIST = ((TODOLISTDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string username_id {
-                get {
-                    return ((string)(this[this.tableTODOLIST.username_idColumn]));
-                }
-                set {
-                    this[this.tableTODOLIST.username_idColumn] = value;
-                }
+                this.tableSHOWTODOSSAFE = ((SHOWTODOSSAFEDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2060,14 +2068,14 @@ namespace CIS4930_Mini_Project_1.Models {
             public string todo {
                 get {
                     try {
-                        return ((string)(this[this.tableTODOLIST.todoColumn]));
+                        return ((string)(this[this.tableSHOWTODOSSAFE.todoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'todo\' in table \'TODOLIST\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'todo\' in table \'SHOWTODOSSAFE\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTODOLIST.todoColumn] = value;
+                    this[this.tableSHOWTODOSSAFE.todoColumn] = value;
                 }
             }
             
@@ -2075,23 +2083,56 @@ namespace CIS4930_Mini_Project_1.Models {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool completed {
                 get {
-                    return ((bool)(this[this.tableTODOLIST.completedColumn]));
+                    return ((bool)(this[this.tableSHOWTODOSSAFE.completedColumn]));
                 }
                 set {
-                    this[this.tableTODOLIST.completedColumn] = value;
+                    this[this.tableSHOWTODOSSAFE.completedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string name {
+                get {
+                    return ((string)(this[this.tableSHOWTODOSSAFE.nameColumn]));
+                }
+                set {
+                    this[this.tableSHOWTODOSSAFE.nameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string username_id {
+                get {
+                    return ((string)(this[this.tableSHOWTODOSSAFE.username_idColumn]));
+                }
+                set {
+                    this[this.tableSHOWTODOSSAFE.username_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Expr1 {
+                get {
+                    return ((string)(this[this.tableSHOWTODOSSAFE.Expr1Column]));
+                }
+                set {
+                    this[this.tableSHOWTODOSSAFE.Expr1Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IstodoNull() {
-                return this.IsNull(this.tableTODOLIST.todoColumn);
+                return this.IsNull(this.tableSHOWTODOSSAFE.todoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SettodoNull() {
-                this[this.tableTODOLIST.todoColumn] = global::System.Convert.DBNull;
+                this[this.tableSHOWTODOSSAFE.todoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2272,52 +2313,25 @@ namespace CIS4930_Mini_Project_1.Models {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class SHOWTODOSSAFERow : global::System.Data.DataRow {
+        public partial class TODOLISTRow : global::System.Data.DataRow {
             
-            private SHOWTODOSSAFEDataTable tableSHOWTODOSSAFE;
+            private TODOLISTDataTable tableTODOLIST;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal SHOWTODOSSAFERow(global::System.Data.DataRowBuilder rb) : 
+            internal TODOLISTRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableSHOWTODOSSAFE = ((SHOWTODOSSAFEDataTable)(this.Table));
+                this.tableTODOLIST = ((TODOLISTDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string todo {
+            public int index {
                 get {
-                    try {
-                        return ((string)(this[this.tableSHOWTODOSSAFE.todoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'todo\' in table \'SHOWTODOSSAFE\' is DBNull.", e);
-                    }
+                    return ((int)(this[this.tableTODOLIST.indexColumn]));
                 }
                 set {
-                    this[this.tableSHOWTODOSSAFE.todoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool completed {
-                get {
-                    return ((bool)(this[this.tableSHOWTODOSSAFE.completedColumn]));
-                }
-                set {
-                    this[this.tableSHOWTODOSSAFE.completedColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string name {
-                get {
-                    return ((string)(this[this.tableSHOWTODOSSAFE.nameColumn]));
-                }
-                set {
-                    this[this.tableSHOWTODOSSAFE.nameColumn] = value;
+                    this[this.tableTODOLIST.indexColumn] = value;
                 }
             }
             
@@ -2325,34 +2339,50 @@ namespace CIS4930_Mini_Project_1.Models {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string username_id {
                 get {
-                    return ((string)(this[this.tableSHOWTODOSSAFE.username_idColumn]));
+                    return ((string)(this[this.tableTODOLIST.username_idColumn]));
                 }
                 set {
-                    this[this.tableSHOWTODOSSAFE.username_idColumn] = value;
+                    this[this.tableTODOLIST.username_idColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Expr1 {
+            public string todo {
                 get {
-                    return ((string)(this[this.tableSHOWTODOSSAFE.Expr1Column]));
+                    try {
+                        return ((string)(this[this.tableTODOLIST.todoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'todo\' in table \'TODOLIST\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableSHOWTODOSSAFE.Expr1Column] = value;
+                    this[this.tableTODOLIST.todoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool completed {
+                get {
+                    return ((bool)(this[this.tableTODOLIST.completedColumn]));
+                }
+                set {
+                    this[this.tableTODOLIST.completedColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IstodoNull() {
-                return this.IsNull(this.tableSHOWTODOSSAFE.todoColumn);
+                return this.IsNull(this.tableTODOLIST.todoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SettodoNull() {
-                this[this.tableSHOWTODOSSAFE.todoColumn] = global::System.Convert.DBNull;
+                this[this.tableTODOLIST.todoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2394,22 +2424,22 @@ namespace CIS4930_Mini_Project_1.Models {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class TODOLISTRowChangeEvent : global::System.EventArgs {
+        public class SHOWTODOSSAFERowChangeEvent : global::System.EventArgs {
             
-            private TODOLISTRow eventRow;
+            private SHOWTODOSSAFERow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TODOLISTRowChangeEvent(TODOLISTRow row, global::System.Data.DataRowAction action) {
+            public SHOWTODOSSAFERowChangeEvent(SHOWTODOSSAFERow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TODOLISTRow Row {
+            public SHOWTODOSSAFERow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2496,22 +2526,22 @@ namespace CIS4930_Mini_Project_1.Models {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class SHOWTODOSSAFERowChangeEvent : global::System.EventArgs {
+        public class TODOLISTRowChangeEvent : global::System.EventArgs {
             
-            private SHOWTODOSSAFERow eventRow;
+            private TODOLISTRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SHOWTODOSSAFERowChangeEvent(SHOWTODOSSAFERow row, global::System.Data.DataRowAction action) {
+            public TODOLISTRowChangeEvent(TODOLISTRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SHOWTODOSSAFERow Row {
+            public TODOLISTRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2724,7 +2754,7 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class TODOLISTTableAdapter : global::System.ComponentModel.Component {
+    public partial class SHOWTODOSSAFETableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -2738,7 +2768,7 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public TODOLISTTableAdapter() {
+        public SHOWTODOSSAFETableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -2835,19 +2865,13 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "TODOLIST";
-            tableMapping.ColumnMappings.Add("username_id", "username_id");
+            tableMapping.DataSetTable = "SHOWTODOSSAFE";
             tableMapping.ColumnMappings.Add("todo", "todo");
             tableMapping.ColumnMappings.Add("completed", "completed");
+            tableMapping.ColumnMappings.Add("name", "name");
+            tableMapping.ColumnMappings.Add("username_id", "username_id");
+            tableMapping.ColumnMappings.Add("Expr1", "Expr1");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [TODOLIST] ([username_id], [todo], [completed]) VALUES (@username_id," +
-                " @todo, @completed)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username_id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@todo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "todo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@completed", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "completed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2863,16 +2887,24 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT TODOLIST.*\r\nFROM   TODOLIST";
+            this._commandCollection[0].CommandText = "SELECT SHOWTODOSSAFE.*, username_id AS Expr1\r\nFROM   SHOWTODOSSAFE\r\nWHERE (userna" +
+                "me_id = @id)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "username_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(cis4930db.TODOLISTDataTable dataTable) {
+        public virtual int Fill(cis4930db.SHOWTODOSSAFEDataTable dataTable, string id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((id == null)) {
+                throw new global::System.ArgumentNullException("id");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(id));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -2884,74 +2916,17 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual cis4930db.TODOLISTDataTable GetData() {
+        public virtual cis4930db.SHOWTODOSSAFEDataTable GetData(string id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            cis4930db.TODOLISTDataTable dataTable = new cis4930db.TODOLISTDataTable();
+            if ((id == null)) {
+                throw new global::System.ArgumentNullException("id");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(id));
+            }
+            cis4930db.SHOWTODOSSAFEDataTable dataTable = new cis4930db.SHOWTODOSSAFEDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(cis4930db.TODOLISTDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(cis4930db dataSet) {
-            return this.Adapter.Update(dataSet, "TODOLIST");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string username_id, string todo, bool completed) {
-            if ((username_id == null)) {
-                throw new global::System.ArgumentNullException("username_id");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(username_id));
-            }
-            if ((todo == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(todo));
-            }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(completed));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
         }
     }
     
@@ -3472,7 +3447,7 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class SHOWTODOSSAFETableAdapter : global::System.ComponentModel.Component {
+    public partial class TODOLISTTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -3486,7 +3461,7 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public SHOWTODOSSAFETableAdapter() {
+        public TODOLISTTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -3583,13 +3558,20 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "SHOWTODOSSAFE";
+            tableMapping.DataSetTable = "TODOLIST";
+            tableMapping.ColumnMappings.Add("index", "index");
+            tableMapping.ColumnMappings.Add("username_id", "username_id");
             tableMapping.ColumnMappings.Add("todo", "todo");
             tableMapping.ColumnMappings.Add("completed", "completed");
-            tableMapping.ColumnMappings.Add("name", "name");
-            tableMapping.ColumnMappings.Add("username_id", "username_id");
-            tableMapping.ColumnMappings.Add("Expr1", "Expr1");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [TODOLIST] ([username_id], [todo], [completed]) VALUES (@username_id," +
+                " @todo, @completed)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username_id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "username_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@todo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "todo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@completed", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "completed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3602,21 +3584,61 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT SHOWTODOSSAFE.*, username_id AS Expr1\r\nFROM   SHOWTODOSSAFE\r\nWHERE (userna" +
-                "me_id = @id)";
+            this._commandCollection[0].CommandText = "SELECT TODOLIST.*\r\nFROM   TODOLIST";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "username_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT [index], username_id, todo, completed\r\nFROM   TODOLIST\r\nWHERE (username_id" +
+                " = @id)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "username_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT [index], username_id, todo, completed\r\nFROM   TODOLIST\r\nWHERE ([index] = @" +
+                "index)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@index", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "index", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "UPDATE TODOLIST\r\nSET      completed = @bool\r\nWHERE ([index] = @index)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bool", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "completed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@index", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "index", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(cis4930db.SHOWTODOSSAFEDataTable dataTable, string id) {
+        public virtual int Fill(cis4930db.TODOLISTDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual cis4930db.TODOLISTDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            cis4930db.TODOLISTDataTable dataTable = new cis4930db.TODOLISTDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(cis4930db.TODOLISTDataTable dataTable, string id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((id == null)) {
                 throw new global::System.ArgumentNullException("id");
             }
@@ -3633,18 +3655,132 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual cis4930db.SHOWTODOSSAFEDataTable GetData(string id) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual cis4930db.TODOLISTDataTable GetDataBy(string id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((id == null)) {
                 throw new global::System.ArgumentNullException("id");
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(id));
             }
-            cis4930db.SHOWTODOSSAFEDataTable dataTable = new cis4930db.SHOWTODOSSAFEDataTable();
+            cis4930db.TODOLISTDataTable dataTable = new cis4930db.TODOLISTDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByIndex(cis4930db.TODOLISTDataTable dataTable, int index) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(index));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual cis4930db.TODOLISTDataTable GetDataByIndex(int index) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(index));
+            cis4930db.TODOLISTDataTable dataTable = new cis4930db.TODOLISTDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(cis4930db.TODOLISTDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(cis4930db dataSet) {
+            return this.Adapter.Update(dataSet, "TODOLIST");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string username_id, string todo, bool completed) {
+            if ((username_id == null)) {
+                throw new global::System.ArgumentNullException("username_id");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(username_id));
+            }
+            if ((todo == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(todo));
+            }
+            this.Adapter.InsertCommand.Parameters[2].Value = ((bool)(completed));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery(bool _bool, int index) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            command.Parameters[0].Value = ((bool)(_bool));
+            command.Parameters[1].Value = ((int)(index));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
@@ -3660,11 +3796,11 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private TODOLISTTableAdapter _tODOLISTTableAdapter;
-        
         private USERSTableAdapter _uSERSTableAdapter;
         
         private USERSSAFETableAdapter _uSERSSAFETableAdapter;
+        
+        private TODOLISTTableAdapter _tODOLISTTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -3678,20 +3814,6 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public TODOLISTTableAdapter TODOLISTTableAdapter {
-            get {
-                return this._tODOLISTTableAdapter;
-            }
-            set {
-                this._tODOLISTTableAdapter = value;
             }
         }
         
@@ -3725,6 +3847,20 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public TODOLISTTableAdapter TODOLISTTableAdapter {
+            get {
+                return this._tODOLISTTableAdapter;
+            }
+            set {
+                this._tODOLISTTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -3742,10 +3878,6 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._tODOLISTTableAdapter != null) 
-                            && (this._tODOLISTTableAdapter.Connection != null))) {
-                    return this._tODOLISTTableAdapter.Connection;
-                }
                 if (((this._uSERSTableAdapter != null) 
                             && (this._uSERSTableAdapter.Connection != null))) {
                     return this._uSERSTableAdapter.Connection;
@@ -3753,6 +3885,10 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
                 if (((this._uSERSSAFETableAdapter != null) 
                             && (this._uSERSSAFETableAdapter.Connection != null))) {
                     return this._uSERSSAFETableAdapter.Connection;
+                }
+                if (((this._tODOLISTTableAdapter != null) 
+                            && (this._tODOLISTTableAdapter.Connection != null))) {
+                    return this._tODOLISTTableAdapter.Connection;
                 }
                 return null;
             }
@@ -3767,13 +3903,13 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._tODOLISTTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 if ((this._uSERSTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._uSERSSAFETableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._tODOLISTTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -3787,15 +3923,6 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(cis4930db dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._tODOLISTTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.TODOLIST.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._tODOLISTTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._uSERSTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.USERS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -3814,6 +3941,15 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._tODOLISTTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TODOLIST.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tODOLISTTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -3824,14 +3960,6 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(cis4930db dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._tODOLISTTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.TODOLIST.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._tODOLISTTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._uSERSTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.USERS.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -3848,6 +3976,14 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._tODOLISTTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TODOLIST.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tODOLISTTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -3858,6 +3994,14 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(cis4930db dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._tODOLISTTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.TODOLIST.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tODOLISTTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._uSERSSAFETableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.USERSSAFE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -3871,14 +4015,6 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._uSERSTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._tODOLISTTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.TODOLIST.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._tODOLISTTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -3921,11 +4057,6 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._tODOLISTTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._tODOLISTTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             if (((this._uSERSTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._uSERSTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
@@ -3933,6 +4064,11 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
             }
             if (((this._uSERSSAFETableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._uSERSSAFETableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._tODOLISTTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tODOLISTTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -3968,15 +4104,6 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._tODOLISTTableAdapter != null)) {
-                    revertConnections.Add(this._tODOLISTTableAdapter, this._tODOLISTTableAdapter.Connection);
-                    this._tODOLISTTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._tODOLISTTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._tODOLISTTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._tODOLISTTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._tODOLISTTableAdapter.Adapter);
-                    }
-                }
                 if ((this._uSERSTableAdapter != null)) {
                     revertConnections.Add(this._uSERSTableAdapter, this._uSERSTableAdapter.Connection);
                     this._uSERSTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -3993,6 +4120,15 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
                     if (this._uSERSSAFETableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._uSERSSAFETableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._uSERSSAFETableAdapter.Adapter);
+                    }
+                }
+                if ((this._tODOLISTTableAdapter != null)) {
+                    revertConnections.Add(this._tODOLISTTableAdapter, this._tODOLISTTableAdapter.Connection);
+                    this._tODOLISTTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tODOLISTTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tODOLISTTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tODOLISTTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tODOLISTTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -4053,10 +4189,6 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._tODOLISTTableAdapter != null)) {
-                    this._tODOLISTTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tODOLISTTableAdapter]));
-                    this._tODOLISTTableAdapter.Transaction = null;
-                }
                 if ((this._uSERSTableAdapter != null)) {
                     this._uSERSTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._uSERSTableAdapter]));
                     this._uSERSTableAdapter.Transaction = null;
@@ -4064,6 +4196,10 @@ namespace CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters {
                 if ((this._uSERSSAFETableAdapter != null)) {
                     this._uSERSSAFETableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._uSERSSAFETableAdapter]));
                     this._uSERSSAFETableAdapter.Transaction = null;
+                }
+                if ((this._tODOLISTTableAdapter != null)) {
+                    this._tODOLISTTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tODOLISTTableAdapter]));
+                    this._tODOLISTTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

@@ -14,6 +14,7 @@ namespace CIS4930_Mini_Project_1.Controllers
     {
 
         USERSTableAdapter usersAgent = new USERSTableAdapter();
+        TODOLISTTableAdapter todoAgent = new TODOLISTTableAdapter();
         public ActionResult Login()
         {
             return View();
@@ -100,5 +101,20 @@ namespace CIS4930_Mini_Project_1.Controllers
             ViewBag.Data = data.Count;
             return View();
         }
+
+        [HttpPost]
+        public ActionResult CompleteToDo(int index, bool isComplete)
+        {
+            var table = todoAgent.GetDataByIndex(index);
+            todoAgent.UpdateQuery(isComplete, index);
+            return null;
+        }
+
+        // public ActionResult InCompleteTodo()
+        // {
+        //
+        // }
     }
+
+    
 }
