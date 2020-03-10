@@ -25,6 +25,11 @@ namespace CIS4930_Mini_Project_1.Controllers
             return View();
         }
 
-        
+        [HttpGet]
+        public ActionResult Dashboard()
+        {
+            return View();
+        }
+
     }
 }

@@ -1,5 +1,7 @@
 ﻿@model CIS4930_Mini_Project_1.Models.ComparePass
 
+@Html.ActionLink("Dashboard", "Dashboard", "Home")
+
 <div id="basic">
     <div id="basic2">
         <h1 style="text-align: center;"> Log In</h1>
@@ -10,7 +12,7 @@
             </div>
 
             <div>
-                <input type="password" name="password"  id="password" placeholder="password..." value=""/>
+                <input type="password" name="password" id="password" placeholder="password..." value="" />
             </div>
 
             <button type="submit" id="search_bar_button">
@@ -21,7 +23,7 @@
                 <a href="/forgotpass">Forgot password?</a>
             </div>
         </form>
-        
+
     </div>
 
 </div>
