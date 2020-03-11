@@ -1,13 +1,15 @@
 ﻿@using CIS4930_Mini_Project_1.Models
 @using CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters
 @{
-    //The SQL Server Task Table
+    /*//The SQL Server Task Table
     var todoAgent = new TODOLISTTableAdapter();
     var todoTable = new cis4930db.TODOLISTDataTable();
-    todoAgent.Fill(todoTable);
+    todoAgent.Fill(todoTable);*/
+    var thisId = ViewData["id"];
+    var db = new dbEntities();
+    var todoTable =  db.Database.SqlQuery<TODOLIST>("SELECT dbo.TODOLIST.* FROM dbo.TODOLIST WHERE (username_id = '"+thisId+"')").ToList<TODOLIST>();
 }
-
-    <table class="table">
+<table class="table">
         <!--Add Items-->
         <thead>
             <th>Task</th>

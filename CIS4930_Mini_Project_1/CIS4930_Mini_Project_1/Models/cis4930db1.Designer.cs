@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\esfar\source\repos\CIS4930-Mini-Project1\CIS4930_Mini_Project_1\CIS4930_Mini_Project_1\Models\cis4930db.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Ashfaq Immam\Source\Repos\CIS4930p1\CIS4930_Mini_Project_1\CIS4930_Mini_Project_1\Models\cis4930db.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

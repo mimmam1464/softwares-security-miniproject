@@ -7,12 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CIS4930_Mini_Project_1
+namespace CIS4930_Mini_Project_1.Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using CIS4930_Mini_Project_1.Models;
     
     public partial class dbEntities : DbContext
     {

@@ -36,6 +36,7 @@ namespace CIS4930_Mini_Project_1.Controllers
         public ActionResult DashboardR(string id)
         {
             ViewBag.id = id;
+            ViewData["id"] = id.ToString();
             return View();
         }
         public ActionResult DashboardH()
