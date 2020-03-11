@@ -85,7 +85,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\" />
-    <Folder Include="Views\AccountH\" />
     <Folder Include="Views\AccountRegular\" />
     <Folder Include="Views\Account\" />
   </ItemGroup>
@@ -190,6 +189,8 @@
     <Content Include="Views\AccountR\Login.cshtml" />
     <Content Include="Views\AccountR\Register.cshtml" />
     <Content Include="Views\AccountR\Test.cshtml" />
+    <Content Include="Views\AccountH\Login.cshtml" />
+    <Content Include="Views\AccountH\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

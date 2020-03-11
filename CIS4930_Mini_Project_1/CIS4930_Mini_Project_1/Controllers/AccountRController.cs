@@ -15,6 +15,7 @@ namespace CIS4930_Mini_Project_1.Controllers
 
         USERSTableAdapter usersAgent = new USERSTableAdapter();
         TODOLISTTableAdapter todoAgent = new TODOLISTTableAdapter();
+        
         public ActionResult Login()
         {
             return View();
