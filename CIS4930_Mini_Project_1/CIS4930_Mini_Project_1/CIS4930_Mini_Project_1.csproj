@@ -158,6 +158,7 @@
     <Content Include="Views\Shared\forgotpassword.cshtml" />
     <Content Include="Views\Home\forgotpass.cshtml" />
     <Content Include="Image\logo.png" />
+    <Content Include="Views\Home\Dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\AnotherPage.cshtml" />
