@@ -17,5 +17,6 @@ namespace CIS4930_Mini_Project_1.Models
         public string username_id { get; set; }
         public string todo { get; set; }
         public bool completed { get; set; }
+        public int index { get; set; }
     }
 }

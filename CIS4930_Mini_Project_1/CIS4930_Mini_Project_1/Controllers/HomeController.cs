@@ -30,5 +30,21 @@ namespace CIS4930_Mini_Project_1.Controllers
         {
             return View();
         }
+
+
+        [HttpGet]
+        public ActionResult DashboardR(string id)
+        {
+            ViewBag.id = id;
+            ViewData["id"] = id.ToString();
+            return View();
+        }
+        public ActionResult DashboardH()
+        {
+            ViewBag.id = AppData.loggedInUser;
+            ViewData["id"] = AppData.loggedInUser;
+            return View();
+        }
+
     }
 }

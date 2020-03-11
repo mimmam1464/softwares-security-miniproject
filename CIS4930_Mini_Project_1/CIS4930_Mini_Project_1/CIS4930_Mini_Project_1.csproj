@@ -89,6 +89,7 @@
     <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppData.cs" />
     <Compile Include="Controllers\AccountHController.cs" />
     <Compile Include="Controllers\AccountRController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -129,6 +130,7 @@
     <Compile Include="Models\TODOLIST.cs">
       <DependentUpon>cis4930db.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TodoModel.cs" />
     <Compile Include="Models\USER.cs">
       <DependentUpon>cis4930db.tt</DependentUpon>
     </Compile>
@@ -137,6 +139,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
     <Content Include="Content\site.css" />
     <Content Include="Models\cis4930db.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -157,6 +160,7 @@
     <Content Include="packages.config" />
     <Content Include="Views\Shared\forgotpassword.cshtml" />
     <Content Include="Image\logo.png" />
+    <Content Include="Views\Home\DashboardR.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\AnotherPage.cshtml" />
@@ -190,6 +194,7 @@
     <Content Include="Views\AccountR\Test.cshtml" />
     <Content Include="Views\AccountH\Login.cshtml" />
     <Content Include="Views\AccountH\Register.cshtml" />
+    <Content Include="Views\Home\DashboardH.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

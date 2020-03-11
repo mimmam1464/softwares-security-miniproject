@@ -4,14 +4,16 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view '4930db.dbo.TODOLIST' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="TODOLIST">
           <Key>
+            <PropertyRef Name="index" />
             <PropertyRef Name="username_id" />
             <PropertyRef Name="completed" />
           </Key>
+          <Property Name="index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="username_id" Type="nvarchar(max)" Nullable="false" />
           <Property Name="todo" Type="nvarchar(max)" />
           <Property Name="completed" Type="bit" Nullable="false" />
@@ -93,6 +95,7 @@ warning 6002: The table/view '4930db.sys.database_firewall_rules' does not have 
         <EntityContainer Name="dbModelStoreContainer">
           <EntitySet Name="TODOLIST" EntityType="Self.TODOLIST" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
+    [TODOLIST].[index] AS [index], 
     [TODOLIST].[username_id] AS [username_id], 
     [TODOLIST].[todo] AS [todo], 
     [TODOLIST].[completed] AS [completed]
@@ -143,8 +146,7 @@ warning 6002: The table/view '4930db.sys.database_firewall_rules' does not have 
     FROM [sys].[database_firewall_rules] AS [database_firewall_rules]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -152,10 +154,12 @@ warning 6002: The table/view '4930db.sys.database_firewall_rules' does not have 
           <Key>
             <PropertyRef Name="username_id" />
             <PropertyRef Name="completed" />
+            <PropertyRef Name="index" />
           </Key>
           <Property Name="username_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="todo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="completed" Type="Boolean" Nullable="false" />
+          <Property Name="index" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="USER">
           <Key>
@@ -238,6 +242,7 @@ warning 6002: The table/view '4930db.sys.database_firewall_rules' does not have 
           <EntitySetMapping Name="TODOLISTs">
             <EntityTypeMapping TypeName="dbModel.TODOLIST">
               <MappingFragment StoreEntitySet="TODOLIST">
+                <ScalarProperty Name="index" ColumnName="index" />
                 <ScalarProperty Name="username_id" ColumnName="username_id" />
                 <ScalarProperty Name="todo" ColumnName="todo" />
                 <ScalarProperty Name="completed" ColumnName="completed" />
