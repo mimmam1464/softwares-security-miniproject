@@ -71,14 +71,18 @@
 </table>
 
 <script>
-    function change() {
-        if (document.getElementById("completeTask").value != "Completed") {
-            document.getElementById("completeTask").value = "Completed";
-            document.getElementById("completeTask").style.background = "#78DE8A";
+    document.addEventListener("mousedown", change); 
+
+    function change(e) {
+        var elem = document.elementFromPoint(e.clientX, e.clientY).closest("input");
+
+        if (elem.value != "Completed" && elem.id == "completeTask") {
+            document.elementFromPoint(e.clientX, e.clientY).value = "Completed";
+            document.elementFromPoint(e.clientX, e.clientY).style.background = "#78DE8A";
         }
-        else {
-            document.getElementById("completeTask").value = "Not Completed";
-            document.getElementById("completeTask").style.background = "#DE7878";
+        else if (elem.value == "Completed" && elem.id == "completeTask") {
+            document.elementFromPoint(e.clientX, e.clientY).value = "Not Completed";
+            document.elementFromPoint(e.clientX, e.clientY).style.background = "#DE7878";
         }
     }
 </script>
