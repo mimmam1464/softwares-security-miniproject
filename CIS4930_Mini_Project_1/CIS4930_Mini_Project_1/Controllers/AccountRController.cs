@@ -104,17 +104,19 @@ namespace CIS4930_Mini_Project_1.Controllers
         }
 
         [HttpPost]
-        public ActionResult CompleteToDo(int index, bool isComplete)
+        public ActionResult CompleteToDo(TodoModel model)
         {
-            var table = todoAgent.GetDataByIndex(index);
-            todoAgent.UpdateQuery(isComplete, index);
-            return null;
+            todoAgent.UpdateQuery(model.isComplete, model.index);
+            return RedirectToAction("DashboardR","Home");
         }
 
-        // public ActionResult InCompleteTodo()
-        // {
-        //
-        // }
+        [HttpPost]
+        public ActionResult DeleteToDo(TodoModel model)
+        {
+            todoAgent.DeleteQuery(model.index);
+            return RedirectToAction("DashboardR", "Home");
+        }
+
     }
 
     
