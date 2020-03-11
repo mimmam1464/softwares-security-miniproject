@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.UI.WebControls;
 using CIS4930_Mini_Project_1.Models;
 using CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters;
 
@@ -40,7 +36,7 @@ namespace CIS4930_Mini_Project_1.Controllers
                 if (data.Count>0)
                     for(int i=0; i<data.Count; i++)
                         if(data[i].hashedkey == model.password)
-                            return RedirectToAction("Index", "Home", model);
+                            return RedirectToAction("DashboardR", "Home", new { id=model.username});
 
                 // //temporary:
                 // var userTable = new cis4930db.USERSDataTable();
@@ -104,17 +100,24 @@ namespace CIS4930_Mini_Project_1.Controllers
         }
 
         [HttpPost]
+        public ActionResult AddTodo(TodoModel model)
+        {
+            todoAgent.Insert(model.username, model.todo, false);
+            return RedirectToAction("DashboardR","Home", new { id = model.username });
+        }
+
+        [HttpPost]
         public ActionResult CompleteToDo(TodoModel model)
         {
             todoAgent.UpdateQuery(model.isComplete, model.index);
-            return RedirectToAction("DashboardR","Home");
+            return RedirectToAction("DashboardR","Home", new { id = model.username });
         }
 
         [HttpPost]
         public ActionResult DeleteToDo(TodoModel model)
         {
             todoAgent.DeleteQuery(model.index);
-            return RedirectToAction("DashboardR", "Home");
+            return RedirectToAction("DashboardR", "Home", new { id = model.username });
         }
 
     }

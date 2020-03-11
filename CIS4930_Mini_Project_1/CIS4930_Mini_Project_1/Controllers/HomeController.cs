@@ -33,8 +33,9 @@ namespace CIS4930_Mini_Project_1.Controllers
 
 
         [HttpGet]
-        public ActionResult DashboardR()
+        public ActionResult DashboardR(string id)
         {
+            ViewBag.id = id;
             return View();
         }
         public ActionResult DashboardH()
