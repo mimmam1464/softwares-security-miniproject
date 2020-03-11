@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using CIS4930_Mini_Project_1.Models;
 using CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters;
@@ -98,6 +95,15 @@ namespace CIS4930_Mini_Project_1.Controllers
         }
 
         //TODO:: Going to the Dashboard do not allow if the id is not the user//
-    }
+        private string HashSaltPepperPassword(string password)
+        {
+            //Here you Hash it salt it and the return a encrypted password
+            return "";
+        }
 
+        private string DecypherPassword(string encryptedPassword)
+        {
+            return "";
+        }
+    }
 }

@@ -113,7 +113,6 @@ namespace CIS4930_Mini_Project_1.Controllers
             return RedirectToAction("DashboardR","Home", new { id = model.username });
         }
 
-        [HttpPost]
         public ActionResult DeleteToDo(TodoModel model)
         {
             todoAgent.DeleteQuery(model.index);
