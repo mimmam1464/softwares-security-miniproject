@@ -12,7 +12,7 @@ namespace CIS4930_Mini_Project_1.Controllers
   
     public class AccountHController : Controller
     {
-        USERSSAFETableAdapter usersAgent = new USERSSAFETableAdapter();
+        USERSTableAdapter usersAgent = new USERSTableAdapter();
         TODOLISTTableAdapter todoAgent = new TODOLISTTableAdapter();
 
         // GET: AccountH
@@ -38,7 +38,7 @@ namespace CIS4930_Mini_Project_1.Controllers
                 //TODO:: Password Hash, Salt and Pepper This
 
                 usersAgent.Insert("tbd", model.username, model.name, model.password);
-                return RedirectToAction("Login", "AccountR", model);
+                return RedirectToAction("Login", "AccountR");
             }
             return View();
         }
@@ -65,7 +65,7 @@ namespace CIS4930_Mini_Project_1.Controllers
             {
                 //Login Handler
                 //temporary:
-                var userTable = new cis4930db.USERSSAFEDataTable();
+                var userTable = new cis4930db.USERSDataTable();
                 usersAgent.Fill(userTable);
                 for (int i = 0; i < userTable.Count; i++)
                 {
@@ -75,7 +75,9 @@ namespace CIS4930_Mini_Project_1.Controllers
                         if (userTable[i].hashedkey == model.password)
                         {
                             //login success
-                            return RedirectToAction("Index","Home");
+                            AppData.LoggedIn = true;
+                            AppData.loggedInUser = userTable[i].username;
+                            return RedirectToAction("DashboardH","Home");
                         }
                     }
                 }

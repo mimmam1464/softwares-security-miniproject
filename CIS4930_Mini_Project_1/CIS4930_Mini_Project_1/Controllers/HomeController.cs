@@ -41,6 +41,8 @@ namespace CIS4930_Mini_Project_1.Controllers
         }
         public ActionResult DashboardH()
         {
+            ViewBag.id = AppData.loggedInUser;
+            ViewData["id"] = AppData.loggedInUser;
             return View();
         }
 

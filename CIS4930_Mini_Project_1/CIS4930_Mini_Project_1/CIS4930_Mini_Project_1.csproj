@@ -89,6 +89,7 @@
     <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppData.cs" />
     <Compile Include="Controllers\AccountHController.cs" />
     <Compile Include="Controllers\AccountRController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -193,6 +194,7 @@
     <Content Include="Views\AccountR\Test.cshtml" />
     <Content Include="Views\AccountH\Login.cshtml" />
     <Content Include="Views\AccountH\Register.cshtml" />
+    <Content Include="Views\Home\DashboardH.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
