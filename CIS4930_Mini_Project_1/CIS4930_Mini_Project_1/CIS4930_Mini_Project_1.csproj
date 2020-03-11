@@ -38,7 +38,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -73,32 +84,122 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\" />
-    <Folder Include="Models\" />
     <Folder Include="Scripts\" />
+    <Folder Include="Views\AccountRegular\" />
+    <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AccountHController.cs" />
+    <Compile Include="Controllers\AccountRController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Models\cis4930db.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cis4930db.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cis4930db.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cis4930db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cis4930db.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cis4930db.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cis4930db1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cis4930db.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\database_firewall_rules.cs">
+      <DependentUpon>cis4930db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoginModels.cs" />
+    <Compile Include="Models\SHOWTODO.cs">
+      <DependentUpon>cis4930db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SHOWTODOSSAFE.cs">
+      <DependentUpon>cis4930db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TODOLIST.cs">
+      <DependentUpon>cis4930db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\USER.cs">
+      <DependentUpon>cis4930db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\USERSSAFE.cs">
+      <DependentUpon>cis4930db.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\site.css" />
+    <Content Include="Models\cis4930db.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>cis4930db.edmx</DependentUpon>
+      <LastGenOutput>cis4930db.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\cis4930db.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>cis4930db.edmx</DependentUpon>
+      <LastGenOutput>cis4930db.cs</LastGenOutput>
+    </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
+    <Content Include="Views\Shared\forgotpassword.cshtml" />
+    <Content Include="Views\Home\forgotpass.cshtml" />
+    <Content Include="Image\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\AnotherPage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Jose.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\cis4930db.xsc">
+      <DependentUpon>cis4930db.xsd</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\cis4930db.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>cis4930db1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\cis4930db.edmx.diagram">
+      <DependentUpon>cis4930db.edmx</DependentUpon>
+    </Content>
+    <None Include="Models\cis4930db.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>cis4930db.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Models\cis4930db.xss">
+      <DependentUpon>cis4930db.xsd</DependentUpon>
+    </Content>
+    <Content Include="Views\AccountR\testview.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\AccountR\Login.cshtml" />
+    <Content Include="Views\AccountR\Register.cshtml" />
+    <Content Include="Views\AccountR\Test.cshtml" />
+    <Content Include="Views\AccountH\Login.cshtml" />
+    <Content Include="Views\AccountH\Register.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <MonoDevelop>
       <Properties>
-        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
+        <XspParameters Port="8082" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
       </Properties>
     </MonoDevelop>
     <VisualStudio>
@@ -108,7 +209,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:62258/</IISUrl>
+          <IISUrl>http://localhost:49389/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
