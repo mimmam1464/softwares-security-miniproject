@@ -156,7 +156,6 @@
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <Content Include="Views\Shared\forgotpassword.cshtml" />
-    <Content Include="Views\Home\forgotpass.cshtml" />
     <Content Include="Image\logo.png" />
   </ItemGroup>
   <ItemGroup>
