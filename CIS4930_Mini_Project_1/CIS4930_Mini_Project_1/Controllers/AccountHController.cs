@@ -12,6 +12,7 @@ namespace CIS4930_Mini_Project_1.Controllers
     {
         USERSTableAdapter usersAgent = new USERSTableAdapter();
         TODOLISTTableAdapter todoAgent = new TODOLISTTableAdapter();
+        CREDENTIALSEASONINGTableAdapter seasonAdapter = new CREDENTIALSEASONINGTableAdapter();
 
         // GET: AccountH
         [HttpPost]
@@ -35,6 +36,15 @@ namespace CIS4930_Mini_Project_1.Controllers
                 //Handle Registration Here//
                 //TODO:: Password Hash, Salt and Pepper This
 
+                //TODO:: STORE THE SALT IN THE DB
+                string saltSeasoning = "Anthony Will put salt Here";
+                string pepperSeasoning = "Anthony Will put pepper Here";
+
+                //Anthony will make the gethashed pass return the salted
+                string hashedPassword = "Password will be hashed";
+
+                seasonAdapter.Insert(model.username, saltSeasoning, "default");
+                //usersAgent.Insert("tbd", model.username, model.name, hashedPassword);
                 usersAgent.Insert("tbd", model.username, model.name, model.password);
                 return RedirectToAction("Login", "AccountR");
             }
@@ -64,12 +74,21 @@ namespace CIS4930_Mini_Project_1.Controllers
                 //Login Handler
                 //temporary:
                 var userTable = new cis4930db.USERSDataTable();
+                var seasonTable = new cis4930db.CREDENTIALSEASONINGDataTable();
+
+                //TODO:: use the value
+                string saltForThisUserName = seasonTable[0].salt;
+                //saltForThisUserName has the salt you need. Anthony will do his magic with it.
+
+
+                seasonAdapter.FillBy(seasonTable, model.username);
                 usersAgent.Fill(userTable);
                 for (int i = 0; i < userTable.Count; i++)
                 {
                     if (userTable[i].username == model.username)
                     {
                         //TODO:: dehash, desalt and depepper the password before the check
+                        //TODO:: get the salt and pepper table and do the seasoning to do a check on the password
                         if (userTable[i].hashedkey == model.password)
                         {
                             //login success
@@ -150,6 +169,7 @@ namespace CIS4930_Mini_Project_1.Controllers
         {
             return "";
         }
+
 
         public ActionResult Error()
         {

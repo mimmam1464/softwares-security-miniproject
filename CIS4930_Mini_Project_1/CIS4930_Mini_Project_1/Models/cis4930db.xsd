@@ -148,7 +148,7 @@ FROM   TODOLIST</CommandText>
               <Mapping SourceColumn="completed" DataSetColumn="completed" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="_4930dbConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="_4930dbConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM TODOLIST
@@ -159,7 +159,7 @@ WHERE  ([index] = @index)</CommandText>
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="_4930dbConnectionString (Web.config)" DbObjectName="[4930db].dbo.TODOLIST" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+              <DbSource ConnectionRef="_4930dbConnectionString (Web.config)" DbObjectName="[4930db].dbo.TODOLIST" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT [index], username_id, todo, completed
@@ -183,7 +183,7 @@ WHERE ([index] = @index)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="_4930dbConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="_4930dbConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE TODOLIST
@@ -198,6 +198,38 @@ WHERE ([index] = @index)</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CREDENTIALSEASONINGTableAdapter" GeneratorDataComponentClassName="CREDENTIALSEASONINGTableAdapter" Name="CREDENTIALSEASONING" UserDataComponentName="CREDENTIALSEASONINGTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="_4930dbConnectionString (Web.config)" DbObjectName="[4930db].dbo.CREDENTIALSEASONING" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="FillBy">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [CREDENTIALSEASONING] ([username_id], [salt], [pepper]) VALUES (@username_id, @salt, @pepper)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@username_id" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="username_id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@salt" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="salt" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@pepper" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="pepper" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT username_id, salt, pepper
+FROM     CREDENTIALSEASONING
+WHERE  (username_id = @username)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="username" ColumnName="username_id" DataSourceName="[4930db].dbo.CREDENTIALSEASONING" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@username" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="username_id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="username_id" DataSetColumn="username_id" />
+              <Mapping SourceColumn="salt" DataSetColumn="salt" />
+              <Mapping SourceColumn="pepper" DataSetColumn="pepper" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -206,7 +238,7 @@ WHERE ([index] = @index)</CommandText>
   <xs:element name="cis4930db" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="cis4930db" msprop:Generator_UserDSName="cis4930db">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="SHOWTODOS" msprop:Generator_TableClassName="SHOWTODOSDataTable" msprop:Generator_TableVarName="tableSHOWTODOS" msprop:Generator_RowChangedName="SHOWTODOSRowChanged" msprop:Generator_TablePropName="SHOWTODOS" msprop:Generator_RowDeletingName="SHOWTODOSRowDeleting" msprop:Generator_RowChangingName="SHOWTODOSRowChanging" msprop:Generator_RowEvHandlerName="SHOWTODOSRowChangeEventHandler" msprop:Generator_RowDeletedName="SHOWTODOSRowDeleted" msprop:Generator_RowClassName="SHOWTODOSRow" msprop:Generator_UserTableName="SHOWTODOS" msprop:Generator_RowEvArgName="SHOWTODOSRowChangeEvent">
+        <xs:element name="SHOWTODOS" msprop:Generator_TableClassName="SHOWTODOSDataTable" msprop:Generator_TableVarName="tableSHOWTODOS" msprop:Generator_TablePropName="SHOWTODOS" msprop:Generator_RowDeletingName="SHOWTODOSRowDeleting" msprop:Generator_RowChangingName="SHOWTODOSRowChanging" msprop:Generator_RowEvHandlerName="SHOWTODOSRowChangeEventHandler" msprop:Generator_RowDeletedName="SHOWTODOSRowDeleted" msprop:Generator_UserTableName="SHOWTODOS" msprop:Generator_RowChangedName="SHOWTODOSRowChanged" msprop:Generator_RowEvArgName="SHOWTODOSRowChangeEvent" msprop:Generator_RowClassName="SHOWTODOSRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="todo" msprop:Generator_ColumnVarNameInTable="columntodo" msprop:Generator_ColumnPropNameInRow="todo" msprop:Generator_ColumnPropNameInTable="todoColumn" msprop:Generator_UserColumnName="todo" minOccurs="0">
@@ -241,7 +273,7 @@ WHERE ([index] = @index)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SHOWTODOSSAFE" msprop:Generator_TableClassName="SHOWTODOSSAFEDataTable" msprop:Generator_TableVarName="tableSHOWTODOSSAFE" msprop:Generator_RowChangedName="SHOWTODOSSAFERowChanged" msprop:Generator_TablePropName="SHOWTODOSSAFE" msprop:Generator_RowDeletingName="SHOWTODOSSAFERowDeleting" msprop:Generator_RowChangingName="SHOWTODOSSAFERowChanging" msprop:Generator_RowEvHandlerName="SHOWTODOSSAFERowChangeEventHandler" msprop:Generator_RowDeletedName="SHOWTODOSSAFERowDeleted" msprop:Generator_RowClassName="SHOWTODOSSAFERow" msprop:Generator_UserTableName="SHOWTODOSSAFE" msprop:Generator_RowEvArgName="SHOWTODOSSAFERowChangeEvent">
+        <xs:element name="SHOWTODOSSAFE" msprop:Generator_TableClassName="SHOWTODOSSAFEDataTable" msprop:Generator_TableVarName="tableSHOWTODOSSAFE" msprop:Generator_TablePropName="SHOWTODOSSAFE" msprop:Generator_RowDeletingName="SHOWTODOSSAFERowDeleting" msprop:Generator_RowChangingName="SHOWTODOSSAFERowChanging" msprop:Generator_RowEvHandlerName="SHOWTODOSSAFERowChangeEventHandler" msprop:Generator_RowDeletedName="SHOWTODOSSAFERowDeleted" msprop:Generator_UserTableName="SHOWTODOSSAFE" msprop:Generator_RowChangedName="SHOWTODOSSAFERowChanged" msprop:Generator_RowEvArgName="SHOWTODOSSAFERowChangeEvent" msprop:Generator_RowClassName="SHOWTODOSSAFERow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="todo" msprop:Generator_ColumnVarNameInTable="columntodo" msprop:Generator_ColumnPropNameInRow="todo" msprop:Generator_ColumnPropNameInTable="todoColumn" msprop:Generator_UserColumnName="todo" minOccurs="0">
@@ -276,7 +308,7 @@ WHERE ([index] = @index)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="USERS" msprop:Generator_TableClassName="USERSDataTable" msprop:Generator_TableVarName="tableUSERS" msprop:Generator_RowChangedName="USERSRowChanged" msprop:Generator_TablePropName="USERS" msprop:Generator_RowDeletingName="USERSRowDeleting" msprop:Generator_RowChangingName="USERSRowChanging" msprop:Generator_RowEvHandlerName="USERSRowChangeEventHandler" msprop:Generator_RowDeletedName="USERSRowDeleted" msprop:Generator_RowClassName="USERSRow" msprop:Generator_UserTableName="USERS" msprop:Generator_RowEvArgName="USERSRowChangeEvent">
+        <xs:element name="USERS" msprop:Generator_TableClassName="USERSDataTable" msprop:Generator_TableVarName="tableUSERS" msprop:Generator_TablePropName="USERS" msprop:Generator_RowDeletingName="USERSRowDeleting" msprop:Generator_RowChangingName="USERSRowChanging" msprop:Generator_RowEvHandlerName="USERSRowChangeEventHandler" msprop:Generator_RowDeletedName="USERSRowDeleted" msprop:Generator_UserTableName="USERS" msprop:Generator_RowChangedName="USERSRowChanged" msprop:Generator_RowEvArgName="USERSRowChangeEvent" msprop:Generator_RowClassName="USERSRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="index" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnindex" msprop:Generator_ColumnPropNameInRow="index" msprop:Generator_ColumnPropNameInTable="indexColumn" msprop:Generator_UserColumnName="index" type="xs:int" />
@@ -311,7 +343,7 @@ WHERE ([index] = @index)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="USERSSAFE" msprop:Generator_TableClassName="USERSSAFEDataTable" msprop:Generator_TableVarName="tableUSERSSAFE" msprop:Generator_RowChangedName="USERSSAFERowChanged" msprop:Generator_TablePropName="USERSSAFE" msprop:Generator_RowDeletingName="USERSSAFERowDeleting" msprop:Generator_RowChangingName="USERSSAFERowChanging" msprop:Generator_RowEvHandlerName="USERSSAFERowChangeEventHandler" msprop:Generator_RowDeletedName="USERSSAFERowDeleted" msprop:Generator_RowClassName="USERSSAFERow" msprop:Generator_UserTableName="USERSSAFE" msprop:Generator_RowEvArgName="USERSSAFERowChangeEvent">
+        <xs:element name="USERSSAFE" msprop:Generator_TableClassName="USERSSAFEDataTable" msprop:Generator_TableVarName="tableUSERSSAFE" msprop:Generator_TablePropName="USERSSAFE" msprop:Generator_RowDeletingName="USERSSAFERowDeleting" msprop:Generator_RowChangingName="USERSSAFERowChanging" msprop:Generator_RowEvHandlerName="USERSSAFERowChangeEventHandler" msprop:Generator_RowDeletedName="USERSSAFERowDeleted" msprop:Generator_UserTableName="USERSSAFE" msprop:Generator_RowChangedName="USERSSAFERowChanged" msprop:Generator_RowEvArgName="USERSSAFERowChangeEvent" msprop:Generator_RowClassName="USERSSAFERow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="index" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnindex" msprop:Generator_ColumnPropNameInRow="index" msprop:Generator_ColumnPropNameInTable="indexColumn" msprop:Generator_UserColumnName="index" type="xs:int" />
@@ -346,7 +378,7 @@ WHERE ([index] = @index)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TODOLIST" msprop:Generator_TableClassName="TODOLISTDataTable" msprop:Generator_TableVarName="tableTODOLIST" msprop:Generator_RowChangedName="TODOLISTRowChanged" msprop:Generator_TablePropName="TODOLIST" msprop:Generator_RowDeletingName="TODOLISTRowDeleting" msprop:Generator_RowChangingName="TODOLISTRowChanging" msprop:Generator_RowEvHandlerName="TODOLISTRowChangeEventHandler" msprop:Generator_RowDeletedName="TODOLISTRowDeleted" msprop:Generator_RowClassName="TODOLISTRow" msprop:Generator_UserTableName="TODOLIST" msprop:Generator_RowEvArgName="TODOLISTRowChangeEvent">
+        <xs:element name="TODOLIST" msprop:Generator_TableClassName="TODOLISTDataTable" msprop:Generator_TableVarName="tableTODOLIST" msprop:Generator_TablePropName="TODOLIST" msprop:Generator_RowDeletingName="TODOLISTRowDeleting" msprop:Generator_RowChangingName="TODOLISTRowChanging" msprop:Generator_RowEvHandlerName="TODOLISTRowChangeEventHandler" msprop:Generator_RowDeletedName="TODOLISTRowDeleted" msprop:Generator_UserTableName="TODOLIST" msprop:Generator_RowChangedName="TODOLISTRowChanged" msprop:Generator_RowEvArgName="TODOLISTRowChangeEvent" msprop:Generator_RowClassName="TODOLISTRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="index" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnindex" msprop:Generator_ColumnPropNameInRow="index" msprop:Generator_ColumnPropNameInTable="indexColumn" msprop:Generator_UserColumnName="index" type="xs:int" />
@@ -365,6 +397,33 @@ WHERE ([index] = @index)</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="completed" msprop:Generator_ColumnVarNameInTable="columncompleted" msprop:Generator_ColumnPropNameInRow="completed" msprop:Generator_ColumnPropNameInTable="completedColumn" msprop:Generator_UserColumnName="completed" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CREDENTIALSEASONING" msprop:Generator_TableClassName="CREDENTIALSEASONINGDataTable" msprop:Generator_TableVarName="tableCREDENTIALSEASONING" msprop:Generator_TablePropName="CREDENTIALSEASONING" msprop:Generator_RowDeletingName="CREDENTIALSEASONINGRowDeleting" msprop:Generator_RowChangingName="CREDENTIALSEASONINGRowChanging" msprop:Generator_RowEvHandlerName="CREDENTIALSEASONINGRowChangeEventHandler" msprop:Generator_RowDeletedName="CREDENTIALSEASONINGRowDeleted" msprop:Generator_UserTableName="CREDENTIALSEASONING" msprop:Generator_RowChangedName="CREDENTIALSEASONINGRowChanged" msprop:Generator_RowEvArgName="CREDENTIALSEASONINGRowChangeEvent" msprop:Generator_RowClassName="CREDENTIALSEASONINGRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="username_id" msprop:Generator_ColumnVarNameInTable="columnusername_id" msprop:Generator_ColumnPropNameInRow="username_id" msprop:Generator_ColumnPropNameInTable="username_idColumn" msprop:Generator_UserColumnName="username_id">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="salt" msprop:Generator_ColumnVarNameInTable="columnsalt" msprop:Generator_ColumnPropNameInRow="salt" msprop:Generator_ColumnPropNameInTable="saltColumn" msprop:Generator_UserColumnName="salt" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="pepper" msprop:Generator_ColumnVarNameInTable="columnpepper" msprop:Generator_ColumnPropNameInRow="pepper" msprop:Generator_ColumnPropNameInTable="pepperColumn" msprop:Generator_UserColumnName="pepper" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
