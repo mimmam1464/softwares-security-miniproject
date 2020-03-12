@@ -1,48 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿
 using System.Web.Mvc;
-using System.Web.Mvc.Ajax;
-using CIS4930_Mini_Project_1.Models;
+using CIS4930_Mini_Project_1.App_Start;
 
 namespace CIS4930_Mini_Project_1.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index(LoginModel model)
+        
+        public ActionResult DashboardR()
         {
-            // var mvcName = typeof(Controller).Assembly.GetName();
-            // var isMono = Type.GetType("Mono.Runtime") != null;
-            //
-            // ViewData["Version"] = mvcName.Version.Major + "." + mvcName.Version.Minor;
-            // ViewData["Runtime"] = isMono ? "Mono" : ".NET";
-            ViewBag.id = model.username;
-            return View();
-        }
+            if (AppState.isLoggedIn)
+            {
+                ViewBag.id = AppState.loggedInUserName;
+                ViewData["id"] = AppState.loggedInUserName;
+                return View();
+            }
 
-        public ActionResult AnotherPage()
-        {
-            return View();
-        }
-
-        public ActionResult Jose()
-        {
-            return View();
-        }
-
-
-        [HttpGet]
-        public ActionResult DashboardR(string id)
-        {
-            ViewBag.id = id;
-            ViewData["id"] = id.ToString();
-            return View();
+            return RedirectToAction("Error");
         }
         public ActionResult DashboardH()
         {
-            ViewBag.id = AppData.loggedInUser;
-            ViewData["id"] = AppData.loggedInUser;
+            if (AppState.isLoggedIn)
+            {
+                ViewBag.id = AppState.loggedInUserName;
+                ViewData["id"] = AppState.loggedInUserName;
+                return View();
+            }
+
+            return RedirectToAction("Error");
+
+        }
+
+        public ActionResult Error()
+        {
             return View();
         }
 

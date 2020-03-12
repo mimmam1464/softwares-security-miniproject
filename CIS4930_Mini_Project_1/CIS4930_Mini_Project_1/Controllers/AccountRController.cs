@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
+using CIS4930_Mini_Project_1.App_Start;
 using CIS4930_Mini_Project_1.Models;
 using CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters;
 
@@ -35,27 +36,21 @@ namespace CIS4930_Mini_Project_1.Controllers
                 var data = db.Database.SqlQuery<USER>("SELECT [index], id, username, name, hashedkey FROM dbo.USERS WHERE (username = '" + model.username + "')").ToList<USER>();
                 if (data.Count>0)
                     for(int i=0; i<data.Count; i++)
-                        if(data[i].hashedkey == model.password)
-                            return RedirectToAction("DashboardR", "Home", new { id=model.username });
-
-                // //temporary:
-                // var userTable = new cis4930db.USERSDataTable();
-                // usersAgent.Fill(userTable);
-                // for (int i = 0; i < userTable.Count; i++)
-                // {
-                //     if (userTable[i].username == model.username)
-                //     {
-                //         if (userTable[i].hashedkey == model.password)
-                //         {
-                //             //login success
-                //             
-                //         }
-                //     }
-                // }
+                        if (data[i].hashedkey == model.password)
+                        {
+                            AppState.Login(model.username);
+                            return RedirectToAction("DashboardR", "Home");
+                        }
                 ModelState.AddModelError("username","sorry account details don't match!");
             }
 
             return View(model);
+        }
+
+        public ActionResult Logout()
+        {
+            AppState.Logout();
+            return RedirectToAction("Login");
         }
 
         public ActionResult Register()
@@ -90,33 +85,24 @@ namespace CIS4930_Mini_Project_1.Controllers
             return View();
         }
 
-        public ActionResult Test()
-        {
-            var sqlquery = "jose' OR 1=1) --";
-            var db = new dbEntities();
-            var data = db.Database.SqlQuery<USER>("SELECT [index], id, username, name, hashedkey FROM dbo.USERS WHERE (username = '"+sqlquery+"')").ToList<USER>();
-            ViewBag.Data = data.Count;
-            return View();
-        }
-
         [HttpPost]
         public ActionResult AddTodo(TodoModel model)
         {
             todoAgent.Insert(model.username, model.todo, false);
-            return RedirectToAction("DashboardR","Home", new { id = model.username });
+            return RedirectToAction("DashboardR","Home");
         }
 
         [HttpPost]
         public ActionResult CompleteToDo(TodoModel model)
         {
             todoAgent.UpdateQuery(model.isComplete, model.index);
-            return RedirectToAction("DashboardR","Home", new { id = model.username });
+            return RedirectToAction("DashboardR","Home");
         }
 
         public ActionResult DeleteToDo(TodoModel model)
         {
             todoAgent.DeleteQuery(model.index);
-            return RedirectToAction("DashboardR", "Home", new { id = model.username });
+            return RedirectToAction("DashboardR", "Home");
         }
 
     }

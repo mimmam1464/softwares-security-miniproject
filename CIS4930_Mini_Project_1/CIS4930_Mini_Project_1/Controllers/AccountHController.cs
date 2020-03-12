@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
+using CIS4930_Mini_Project_1.App_Start;
 using CIS4930_Mini_Project_1.Models;
 using CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters;
 
@@ -72,8 +73,8 @@ namespace CIS4930_Mini_Project_1.Controllers
                         if (userTable[i].hashedkey == model.password)
                         {
                             //login success
-                            AppData.LoggedIn = true;
-                            AppData.loggedInUser = userTable[i].username;
+                            AppState.isLoggedIn= true;
+                            AppState.loggedInUserName = userTable[i].username;
                             return RedirectToAction("DashboardH","Home");
                         }
                     }
@@ -84,14 +85,58 @@ namespace CIS4930_Mini_Project_1.Controllers
             return View(model);
         }
 
+        public ActionResult Logout()
+        {
+            AppState.Logout();
+            return RedirectToAction("Login");
+        }
+
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        //TODO:: Make This Secured for CSRF//
-        public ActionResult CompleteToDo(int index, bool isComplete)
+        public ActionResult AddTodo(TodoModel model)
         {
-            var table = todoAgent.GetDataByIndex(index);
-            todoAgent.UpdateQuery(isComplete, index);
-            return null;
+            if (AppState.isLoggedIn & model.username == AppState.loggedInUserName)
+            {
+
+                todoAgent.Insert(model.username, model.todo, false);
+                return RedirectToAction("DashboardH", "Home");
+            }
+            AppState.Logout();
+            return RedirectToAction("Error");
+
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CompleteToDo(TodoModel model)
+        {
+
+            if (AppState.isLoggedIn & model.username == AppState.loggedInUserName)
+            {
+
+                todoAgent.UpdateQuery(model.isComplete, model.index);
+                return RedirectToAction("DashboardH", "Home");
+            }
+
+            AppState.Logout();
+            return RedirectToAction("Error");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteToDo(TodoModel model)
+        {
+
+            if (AppState.isLoggedIn & model.username == AppState.loggedInUserName)
+            {
+
+                todoAgent.DeleteQuery(model.index);
+                return RedirectToAction("DashboardH", "Home");
+            }
+
+            AppState.Logout();
+            return RedirectToAction("Error");
         }
 
         //TODO:: Going to the Dashboard do not allow if the id is not the user//
@@ -104,6 +149,11 @@ namespace CIS4930_Mini_Project_1.Controllers
         private string DecypherPassword(string encryptedPassword)
         {
             return "";
+        }
+
+        public ActionResult Error()
+        {
+            return View();
         }
     }
 }
