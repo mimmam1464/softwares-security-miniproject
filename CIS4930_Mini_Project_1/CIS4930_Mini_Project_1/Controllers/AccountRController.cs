@@ -36,7 +36,7 @@ namespace CIS4930_Mini_Project_1.Controllers
                 if (data.Count>0)
                     for(int i=0; i<data.Count; i++)
                         if(data[i].hashedkey == model.password)
-                            return RedirectToAction("DashboardR", "Home", new { id=model.username});
+                            return RedirectToAction("DashboardR", "Home", new { id=model.username });
 
                 // //temporary:
                 // var userTable = new cis4930db.USERSDataTable();
