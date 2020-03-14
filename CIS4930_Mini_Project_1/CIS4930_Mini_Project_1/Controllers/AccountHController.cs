@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web.Mvc;
 using CIS4930_Mini_Project_1.App_Start;
 using CIS4930_Mini_Project_1.Models;
@@ -14,6 +16,10 @@ namespace CIS4930_Mini_Project_1.Controllers
         TODOLISTTableAdapter todoAgent = new TODOLISTTableAdapter();
         CREDENTIALSEASONINGTableAdapter seasonAdapter = new CREDENTIALSEASONINGTableAdapter();
 
+        public ActionResult Register()
+        {
+            return View();
+        }
         // GET: AccountH
         [HttpPost]
         public ActionResult Register(LoginModel model)
@@ -37,23 +43,18 @@ namespace CIS4930_Mini_Project_1.Controllers
                 //TODO:: Password Hash, Salt and Pepper This
 
                 //TODO:: STORE THE SALT IN THE DB
-                string saltSeasoning = "Anthony Will put salt Here";
-                string pepperSeasoning = "Anthony Will put pepper Here";
-
+                string saltSeasoning = GetSalt();
                 //Anthony will make the gethashed pass return the salted
-                string hashedPassword = "Password will be hashed";
+                string hashedPassword = HashSaltPepperPassword(model.password, saltSeasoning);
 
                 seasonAdapter.Insert(model.username, saltSeasoning, "default");
                 //usersAgent.Insert("tbd", model.username, model.name, hashedPassword);
-                usersAgent.Insert("tbd", model.username, model.name, model.password);
-                return RedirectToAction("Login", "AccountR");
+                usersAgent.Insert("tbd", model.username, model.name, hashedPassword);
+                return RedirectToAction("Login", "AccountH");
             }
             return View();
         }
-        public ActionResult Register()
-        {
-            return View();
-        }
+        
 
         public ActionResult Login()
         {
@@ -77,7 +78,7 @@ namespace CIS4930_Mini_Project_1.Controllers
                 var seasonTable = new cis4930db.CREDENTIALSEASONINGDataTable();
 
                 //TODO:: use the value
-                string saltForThisUserName = seasonTable[0].salt;
+                string saltForThisUserName = "";
                 //saltForThisUserName has the salt you need. Anthony will do his magic with it.
 
 
@@ -87,9 +88,14 @@ namespace CIS4930_Mini_Project_1.Controllers
                 {
                     if (userTable[i].username == model.username)
                     {
-                        //TODO:: dehash, desalt and depepper the password before the check
-                        //TODO:: get the salt and pepper table and do the seasoning to do a check on the password
-                        if (userTable[i].hashedkey == model.password)
+                        ModelState.AddModelError("user",userTable[i].username);
+
+
+                        saltForThisUserName = seasonTable[0].salt;
+                        ModelState.AddModelError("salt",saltForThisUserName);
+                        ModelState.AddModelError("pass", model.password);
+
+                        if (DecypherPassword(model.password, userTable[i].hashedkey, saltForThisUserName ))
                         {
                             //login success
                             AppState.isLoggedIn= true;
@@ -158,16 +164,30 @@ namespace CIS4930_Mini_Project_1.Controllers
             return RedirectToAction("Error");
         }
 
-        //TODO:: Going to the Dashboard do not allow if the id is not the user//
-        private string HashSaltPepperPassword(string password)
-        {
-            //Here you Hash it salt it and the return a encrypted password
-            return "";
+        public string GetSalt() {
+            RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
+            Random rnd = new Random();
+            byte[] buff = new byte[rnd.Next(1, 20)];
+            rng.GetBytes(buff);
+            return Convert.ToBase64String(buff);
+
         }
 
-        private string DecypherPassword(string encryptedPassword)
+        private string HashSaltPepperPassword(string password, string salt)
         {
-            return "";
+            //Here you Hash it salt it and the return a encrypted password
+            string pepper = "softwareSecurity";
+            byte[] bytes = Encoding.UTF8.GetBytes(password + salt + pepper);
+            SHA256Managed sHA256ManagedString = new SHA256Managed();
+            byte[] hash = sHA256ManagedString.ComputeHash(bytes);
+            return Convert.ToBase64String(hash);
+        }
+
+        private bool DecypherPassword(string plainPassword, string encryptedPassword, string salt)
+        {
+            string newHashedPin = HashSaltPepperPassword(plainPassword, salt);
+            return newHashedPin.Equals(encryptedPassword);
+
         }
 
 
