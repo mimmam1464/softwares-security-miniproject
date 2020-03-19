@@ -85,6 +85,7 @@ namespace CIS4930_Mini_Project_1.Controllers
             return View();
         }
 
+        [ValidateInput(false)]
         [HttpPost]
         public ActionResult AddTodo(TodoModel model)
         {

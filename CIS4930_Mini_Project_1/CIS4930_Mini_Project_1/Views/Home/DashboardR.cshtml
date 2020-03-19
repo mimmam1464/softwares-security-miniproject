@@ -21,11 +21,13 @@
         <tr>
             @using (Html.BeginForm("AddTodo", "AccountR"))
             {
-                <td>
-                    <input style="display: none" value="@ViewBag.id" name="username" />
-                    <input name="todo" type="text" placeholder="Task to Add" name="task" />
-                    <input class="btn-primary" type="submit" value="Update" />
-                </td>
+
+            <td>
+
+                <input style="display: none" value="@ViewBag.id" name="username" />
+                <input name="todo" type="text" placeholder="Task to Add" name="task"                 />
+                <input class="btn-primary" type="submit" value="Update" />
+            </td>
             }
 
         </tr>
