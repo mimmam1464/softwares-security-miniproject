@@ -1,0 +1,48 @@
+﻿body {
+    background-color: aliceblue!important;
+}
+
+#Header {
+    /* width: 50px; */
+    position: relative;
+    border-bottom: double;
+    /* border-width: 2px; */
+}
+
+#Foot {
+    /* width: 50px; */
+    position: relative;
+    border-top: double;
+    /* border-width: 2px; */
+}
+
+#basic {
+    /* width: 100px; */
+    /* background: red; */
+}
+
+#basic #basic2 {
+    content: "";
+    width: 50%;
+    height: auto;
+    position: relative;
+    /* background: green; */
+    /* position: absolute; */
+    left: 25%;
+    top: 20px;
+    border-style: dashed;
+    border-width: 3px;
+    border-color: black;
+}
+
+form {
+    padding-left: 20%;
+    padding-bottom: 5%;
+}
+
+input {
+    margin: 6px!important;
+}
+label {
+    right: 40px;
+}

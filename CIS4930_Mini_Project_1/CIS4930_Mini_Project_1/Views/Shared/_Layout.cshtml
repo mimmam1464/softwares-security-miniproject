@@ -3,16 +3,17 @@
 <head>
     <title>@ViewBag.Title</title>
     <meta charset="utf-8" />
-    <link href="~/Style/style.css" rel="stylesheet">
+    <link href="~/Content/site.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
     <div id="Header">
         <img src="~/Image/logo.png" height="42" width="42">
+        <a href="@Url.Content("~/"+ViewBag.LogoutAddress)" style="float: right">@ViewBag.LoginInfo &nbsp;</a>
 
     </div>
-    @RenderBody()
-
+    <div class="container"> @RenderBody()</div>
 
 </body>
-<footer id="Foot""> I own nothing <a href="https://www.google.com" title="go home">&copy;</a></footer>
+<footer id="Foot"> &nbsp; I own nothing <a href="https://www.google.com" title="go home">&copy;</a></footer>
 </html>

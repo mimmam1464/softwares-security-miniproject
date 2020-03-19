@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -9,6 +10,11 @@
     <RootNamespace>CIS4930_Mini_Project_1</RootNamespace>
     <AssemblyName>CIS4930_Mini_Project_1</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
@@ -34,6 +40,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -66,34 +77,121 @@
     <Reference Include="System.Web.Mvc">
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\" />
     <Folder Include="Scripts\" />
+    <Folder Include="Views\AccountRegular\" />
+    <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AppState.cs" />
+    <Compile Include="Controllers\AccountHController.cs" />
+    <Compile Include="Controllers\AccountRController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\dashboard.cs" />
-    <Compile Include="Models\Person.cs" />
-    <Compile Include="Models\ComparePass.cs" />
+    <Compile Include="Models\cis4930db.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cis4930db.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cis4930db.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cis4930db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cis4930db.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cis4930db.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Models\cis4930db1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cis4930db.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\database_firewall_rules.cs">
+      <DependentUpon>cis4930db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoginModels.cs" />
+    <Compile Include="Models\SHOWTODO.cs">
+      <DependentUpon>cis4930db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SHOWTODOSSAFE.cs">
+      <DependentUpon>cis4930db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TODOLIST.cs">
+      <DependentUpon>cis4930db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TodoModel.cs" />
+    <Compile Include="Models\USER.cs">
+      <DependentUpon>cis4930db.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\USERSSAFE.cs">
+      <DependentUpon>cis4930db.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\site.css" />
+    <Content Include="Models\cis4930db.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>cis4930db.edmx</DependentUpon>
+      <LastGenOutput>cis4930db.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\cis4930db.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>cis4930db.edmx</DependentUpon>
+      <LastGenOutput>cis4930db.cs</LastGenOutput>
+    </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
-    <Content Include="Style\style.css" />
     <Content Include="Views\Shared\forgotpassword.cshtml" />
-    <Content Include="Views\Home\forgotpass.cshtml" />
     <Content Include="Image\logo.png" />
+    <Content Include="Views\Home\DashboardR.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\cis4930db.xsc">
+      <DependentUpon>cis4930db.xsd</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\cis4930db.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>cis4930db1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\cis4930db.edmx.diagram">
+      <DependentUpon>cis4930db.edmx</DependentUpon>
+    </Content>
+    <None Include="Models\cis4930db.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>cis4930db.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Models\cis4930db.xss">
+      <DependentUpon>cis4930db.xsd</DependentUpon>
+    </Content>
+    <Content Include="Views\AccountR\testview.cshtml" />
+    <Content Include="Views\AccountR\Login.cshtml" />
+    <Content Include="Views\AccountR\Register.cshtml" />
+    <Content Include="Views\AccountR\Test.cshtml" />
+    <Content Include="Views\AccountH\Login.cshtml" />
+    <Content Include="Views\AccountH\Register.cshtml" />
+    <Content Include="Views\Home\DashboardH.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
@@ -119,4 +217,6 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v16.0\WebApplications\Microsoft.WebApplication.targets" />
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
 </Project>

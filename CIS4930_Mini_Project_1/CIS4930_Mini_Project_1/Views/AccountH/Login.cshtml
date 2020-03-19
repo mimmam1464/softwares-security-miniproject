@@ -1,0 +1,43 @@
+﻿@using System.Web.UI.WebControls
+@model CIS4930_Mini_Project_1.Models.LoginModel
+
+<div id="basic">
+    <div id="basic2">
+        <h1 style="text-align: center;">Log In</h1>
+        <div id="opt"> </div>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.username, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control", @PlaceHolder = "username..." } })
+                    @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control", @PlaceHolder = "password..." } })
+                    @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Log in" class="btn btn-default" />
+                </div>
+            </div>
+
+            <div>
+                <a href="../AccountH/Register">Create an Account</a>
+            </div>
+        }
+    </div>
+
+</div>
+<br/>
+<br/>
+<br/>
