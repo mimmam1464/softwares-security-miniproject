@@ -1,5 +1,4 @@
-﻿
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using CIS4930_Mini_Project_1.App_Start;
 
 namespace CIS4930_Mini_Project_1.Controllers

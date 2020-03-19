@@ -34,7 +34,7 @@
         {
             <tr>
 
-                <td>@todoTable[i].todo</td>
+                <td>@Html.Raw(@todoTable[i].todo)</td>
                 @if (todoTable[i].completed)
                 {
                     using (Html.BeginForm("CompleteToDo", "AccountR", new TodoModel { index = todoTable[i].index, isComplete = false, username = ViewBag.id }))
