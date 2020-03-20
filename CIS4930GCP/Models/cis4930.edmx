@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view '4390db.dbo.CREDENTIALSEASONING' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="CREDENTIALSEASONING">
+          <Key>
+            <PropertyRef Name="username_id" />
+          </Key>
+          <Property Name="username_id" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="salt" Type="nvarchar(max)" />
+          <Property Name="pepper" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view '4390db.dbo.TODOLIST' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TODOLIST">
+          <Key>
+            <PropertyRef Name="index" />
+            <PropertyRef Name="username_id" />
+            <PropertyRef Name="completed" />
+          </Key>
+          <Property Name="index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username_id" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="todo" Type="nvarchar(max)" />
+          <Property Name="completed" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view '4390db.dbo.USERS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="USERS">
+          <Key>
+            <PropertyRef Name="index" />
+            <PropertyRef Name="username" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="hashedkey" />
+          </Key>
+          <Property Name="index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id" Type="nvarchar(max)" />
+          <Property Name="username" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="hashedkey" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="dbModelStoreContainer">
+          <EntitySet Name="CREDENTIALSEASONING" EntityType="Self.CREDENTIALSEASONING" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CREDENTIALSEASONING].[username_id] AS [username_id], 
+    [CREDENTIALSEASONING].[salt] AS [salt], 
+    [CREDENTIALSEASONING].[pepper] AS [pepper]
+    FROM [dbo].[CREDENTIALSEASONING] AS [CREDENTIALSEASONING]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TODOLIST" EntityType="Self.TODOLIST" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TODOLIST].[index] AS [index], 
+    [TODOLIST].[username_id] AS [username_id], 
+    [TODOLIST].[todo] AS [todo], 
+    [TODOLIST].[completed] AS [completed]
+    FROM [dbo].[TODOLIST] AS [TODOLIST]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="USERS" EntityType="Self.USERS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [USERS].[index] AS [index], 
+    [USERS].[id] AS [id], 
+    [USERS].[username] AS [username], 
+    [USERS].[name] AS [name], 
+    [USERS].[hashedkey] AS [hashedkey]
+    FROM [dbo].[USERS] AS [USERS]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CREDENTIALSEASONING">
+          <Key>
+            <PropertyRef Name="username_id" />
+          </Key>
+          <Property Name="username_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="salt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pepper" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TODOLIST">
+          <Key>
+            <PropertyRef Name="index" />
+            <PropertyRef Name="username_id" />
+            <PropertyRef Name="completed" />
+          </Key>
+          <Property Name="index" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="todo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="completed" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="index" />
+            <PropertyRef Name="username" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="hashedkey" />
+          </Key>
+          <Property Name="index" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="hashedkey" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CREDENTIALSEASONINGs" EntityType="Self.CREDENTIALSEASONING" />
+          <EntitySet Name="TODOLISTs" EntityType="Self.TODOLIST" />
+          <EntitySet Name="USERS" EntityType="Self.USER" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbModelStoreContainer" CdmEntityContainer="dbEntities">
+          <EntitySetMapping Name="CREDENTIALSEASONINGs">
+            <EntityTypeMapping TypeName="dbModel.CREDENTIALSEASONING">
+              <MappingFragment StoreEntitySet="CREDENTIALSEASONING">
+                <ScalarProperty Name="username_id" ColumnName="username_id" />
+                <ScalarProperty Name="salt" ColumnName="salt" />
+                <ScalarProperty Name="pepper" ColumnName="pepper" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TODOLISTs">
+            <EntityTypeMapping TypeName="dbModel.TODOLIST">
+              <MappingFragment StoreEntitySet="TODOLIST">
+                <ScalarProperty Name="index" ColumnName="index" />
+                <ScalarProperty Name="username_id" ColumnName="username_id" />
+                <ScalarProperty Name="todo" ColumnName="todo" />
+                <ScalarProperty Name="completed" ColumnName="completed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USERS">
+            <EntityTypeMapping TypeName="dbModel.USER">
+              <MappingFragment StoreEntitySet="USERS">
+                <ScalarProperty Name="index" ColumnName="index" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="hashedkey" ColumnName="hashedkey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
