@@ -84,6 +84,7 @@ namespace CIS4930GCP.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult AddTodo(TodoModel model)
         {
             todoAgent.Insert(model.username, model.todo, false);
