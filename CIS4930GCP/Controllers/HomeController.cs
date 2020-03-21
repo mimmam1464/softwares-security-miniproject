@@ -6,10 +6,10 @@ namespace CIS4930_Mini_Project_1.Controllers
     public class HomeController : Controller
     {
 
-        public ActionResult DashboardR()
+        public ActionResult DashboardR(string id)
         {
-                ViewBag.id = AppState.loggedInUserName;
-                ViewData["id"] = AppState.loggedInUserName;
+                ViewBag.id = id;
+                ViewData["id"] = id;
                 return View();
         }
         public ActionResult DashboardH()
@@ -24,7 +24,6 @@ namespace CIS4930_Mini_Project_1.Controllers
             return RedirectToAction("Error");
 
         }
-
         public ActionResult Error()
         {
             return View();

@@ -4,12 +4,10 @@ using System.Web.Mvc;
 using CIS4930GCP.App_Start;
 using CIS4930GCP.Models;
 using CIS4930GCP.Models.cis4930dbTableAdapters;
-
 namespace CIS4930GCP.Controllers
 {
     public class AccountRController : Controller
     {
-
         USERSTableAdapter usersAgent = new USERSTableAdapter();
         TODOLISTTableAdapter todoAgent = new TODOLISTTableAdapter();
 
@@ -34,12 +32,12 @@ namespace CIS4930GCP.Controllers
                 //var sqlquery = "jose' OR 1=1) --";
                 var db = new dbEntities();
                 var data = db.Database.SqlQuery<USER>("SELECT [index], id, username, name, hashedkey FROM dbo.USERS WHERE (username = '" + model.username + "')").ToList<USER>();
-                if (data.Count > 0)
+                if (data.Count > 0)  
                     for (int i = 0; i < data.Count; i++)
                         if (data[i].hashedkey == model.password)
                         {
                             AppState.Login(model.username);
-                            return RedirectToAction("DashboardR", "Home");
+                            return RedirectToAction("DashboardR", "Home", new {id = model.username});
                         }
                 ModelState.AddModelError("username", "sorry account details don't match!");
             }
@@ -89,20 +87,20 @@ namespace CIS4930GCP.Controllers
         public ActionResult AddTodo(TodoModel model)
         {
             todoAgent.Insert(model.username, model.todo, false);
-            return RedirectToAction("DashboardR", "Home");
+            return RedirectToAction("DashboardR", "Home", new { id = model.username });
         }
 
         [HttpPost]
         public ActionResult CompleteToDo(TodoModel model)
         {
             todoAgent.UpdateQuery(model.isComplete, model.index);
-            return RedirectToAction("DashboardR", "Home");
+            return RedirectToAction("DashboardR", "Home", new { id = model.username });
         }
 
         public ActionResult DeleteToDo(TodoModel model)
         {
             todoAgent.DeleteQuery(model.index);
-            return RedirectToAction("DashboardR", "Home");
+            return RedirectToAction("DashboardR", "Home", new { id = model.username });
         }
 
     }
