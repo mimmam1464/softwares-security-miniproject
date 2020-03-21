@@ -33,43 +33,46 @@
             }
 
         </tr>
-
-        @for (int i = 0; i < todoTable.Count; i++)
+        @if (todoTable.Count != 0)
         {
-            <tr>
+            for (int i = 0; i < todoTable.Count; i++)
+            {
+                <tr>
 
-                <td>@todoTable[i].todo</td>
-                @if (todoTable[i].completed)
-                {
-                    using (Html.BeginForm("CompleteToDo", "AccountH", new TodoModel { index = todoTable[i].index, isComplete = false, username = ViewBag.id }))
+                    <td>@todoTable[i].todo</td>
+                    @if (todoTable[i].completed)
                     {
+                        using (Html.BeginForm("CompleteToDo", "AccountH", new TodoModel { index = todoTable[i].index, isComplete = false, username = ViewBag.id }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <td>
+                                <input class="btn-success" type="submit" value="Complete" name="isCompleted" />
+                            </td>
+                        }
+                    }
+                    else
+                    {
+                        using (Html.BeginForm("CompleteToDo", "AccountH", new TodoModel { index = todoTable[i].index, isComplete = true, username = ViewBag.id }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <td>
+                                <input class="btn-secondary" type="submit" value="Mark Complete" />
+                            </td>
+                        }
+                    }
+                    @using (Html.BeginForm("DeleteToDo", "AccountH", new TodoModel { index = todoTable[i].index, username = ViewBag.id }))
+                    {
+
                         @Html.AntiForgeryToken()
                         <td>
-                            <input class="btn-success" type="submit" value="Complete" name="isCompleted" />
+                            <input type="submit" class="btn-danger" id="deleteTask" value="Delete" />
                         </td>
                     }
-                }
-                else
-                {
-                    using (Html.BeginForm("CompleteToDo", "AccountH", new TodoModel { index = todoTable[i].index, isComplete = true, username = ViewBag.id }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <td>
-                            <input class="btn-secondary" type="submit" value="Mark Complete" />
-                        </td>
-                    }
-                }
-                @using (Html.BeginForm("DeleteToDo", "AccountH", new TodoModel { index = todoTable[i].index, username = ViewBag.id }))
-                {
+                </tr>
 
-                    @Html.AntiForgeryToken()
-                    <td>
-                        <input type="submit" class="btn-danger" id="deleteTask" value="Delete" />
-                    </td>
-                }
-            </tr>
-
+            }
         }
+
 
     </tbody>
 </table>

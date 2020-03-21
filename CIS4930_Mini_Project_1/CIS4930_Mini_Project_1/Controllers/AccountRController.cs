@@ -7,6 +7,7 @@ using CIS4930_Mini_Project_1.Models.cis4930dbTableAdapters;
 
 namespace CIS4930_Mini_Project_1.Controllers
 {
+    [ValidateInput(false)]
     public class AccountRController : Controller
     {
 

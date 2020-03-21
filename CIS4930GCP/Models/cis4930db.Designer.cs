@@ -2244,7 +2244,7 @@ namespace CIS4930GCP.Models.cis4930dbTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT TODOLIST.*\r\nFROM   TODOLIST";
@@ -2256,10 +2256,16 @@ namespace CIS4930GCP.Models.cis4930dbTableAdapters {
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@index", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "index", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "UPDATE TODOLIST\r\nSET      completed = @bool\r\nWHERE ([index] = @index)";
+            this._commandCollection[2].CommandText = "SELECT [index], username_id, todo, completed\r\nFROM   TODOLIST\r\nWHERE (username_id" +
+                " = @username)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bool", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "completed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@index", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "index", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@username", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "username_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "UPDATE TODOLIST\r\nSET      completed = @bool\r\nWHERE ([index] = @index)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bool", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "completed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@index", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "index", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2281,6 +2287,42 @@ namespace CIS4930GCP.Models.cis4930dbTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual cis4930db.TODOLISTDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            cis4930db.TODOLISTDataTable dataTable = new cis4930db.TODOLISTDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(cis4930db.TODOLISTDataTable dataTable, string username) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((username == null)) {
+                throw new global::System.ArgumentNullException("username");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(username));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual cis4930db.TODOLISTDataTable GetDataBy2(string username) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((username == null)) {
+                throw new global::System.ArgumentNullException("username");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(username));
+            }
             cis4930db.TODOLISTDataTable dataTable = new cis4930db.TODOLISTDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -2378,7 +2420,7 @@ namespace CIS4930GCP.Models.cis4930dbTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQuery(bool _bool, int index) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             command.Parameters[0].Value = ((bool)(_bool));
             command.Parameters[1].Value = ((int)(index));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
